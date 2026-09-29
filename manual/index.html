@@ -121,6 +121,9 @@ ol.first li::before { content: counter(s); font-weight: 700; color: var(--accent
 .open .keys kbd { font-size: 21px; padding: .22em .65em .14em; }
 .open .keys .plus { color: var(--feature-dim); padding: 0; }
 .open .sub { margin-top: 10px; font-size: 16px; color: var(--feature-dim); }
+.panels { margin: 22px 0 0; max-width: 720px; }
+.panels img { display: block; width: 100%; height: auto; border: 1px solid var(--rule-strong); background: #17191a; }
+.panels figcaption { margin-top: 10px; font-size: 16px; line-height: 1.5; color: var(--text); }
 .aside { margin: 14px 0 0; font-size: 15px; color: var(--quiet); max-width: 720px; }
 
 .groups { columns: 2; column-gap: 36px; margin-top: 18px; }
@@ -196,6 +199,10 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <li><span>Shape the notes with the <a href="#ctrl">CTRL knobs</a>.</span></li>
       <li><span>Hold <kbd>SUB PAD</kbd> again for the next sound.</span></li>
     </ol>
+    <figure class="panels">
+      <img src="img/doomos-record-setting-panels.gif" width="1040" height="560" alt="RECORD SETTING pressed three times: the track panel slides in from the left, then the pattern panel from the right, then both are closed.">
+      <figcaption>Press <kbd>RECORD SETTING</kbd> once for the track panel, twice for the pattern panel, a third time to close.</figcaption>
+    </figure>
   </section>
 
   <section class="part" id="ctrl">
