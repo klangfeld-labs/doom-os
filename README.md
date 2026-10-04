@@ -8,7 +8,7 @@ DOOM OS is a heavily modified version of the original 5.52 firmware. It adds a g
 sequencer, a mixer, effect automation, custom shortcuts and more, and improves parts of the original
 firmware. You patch it yourself, in your browser, using the official firmware file from Roland.
 
-Current version: 0.6-alpha. 
+Current version: 0.6.1-alpha, build ED5E (2026-10-04)
 
 **[Quick installation: Use the web patcher to install DOOM OS](https://klangfeldlabs.com/doom-os/patcher)**
 
