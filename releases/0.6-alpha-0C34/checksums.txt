@@ -1,0 +1,2 @@
+# firmware  sha256 of the stock SP404MKII_APP1.bin  sha256 of the DOOM OS image  status
+5.52  4a3d67711e14dcc97d50249a4eee7dd6df0251a2f37757cbbe2556c233730d80  79525d514784bbdcc70cb9c05b5fb987500e99ddf02aa4ceeb875bf9070fa26d  run on a unit

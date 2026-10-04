@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOOM OS patcher</title>
+<meta name="description" content="Patches the official Roland SP-404MK2 firmware with DOOM OS, in your browser. Nothing is uploaded.">
+<style>
+
+:root {
+  --paper: #e3e5e3;
+  --ink: #1d1f21;
+  --text: #3c4044;
+  --quiet: #4c5054;
+  --accent: #a8331f;
+  --accent-text: #8f2a19;
+  --box: #d5d8d6;
+  --panel: #17191a;
+  --panel-ink: #e3e5e3;
+  --panel-dim: rgba(227, 229, 227, 0.62);
+  --panel-line: rgba(227, 229, 227, 0.16);
+  --ok: #9fd3a8;
+  --bad: #ff8a73;
+  --hot: #d9482e;
+  --rule: rgba(29, 31, 33, 0.45);
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); }
+body {
+  color: var(--ink);
+  font-family: Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+a { color: var(--ink); text-decoration: none; }
+a:hover { color: var(--accent); }
+::selection { background: rgba(168, 51, 31, 0.2); }
+button { font: inherit; }
+strong, b { font-weight: 700; color: var(--ink); }
+
+.wrap { margin: 0 auto; max-width: 1060px; padding: 0 44px 56px; }
+
+header.site { padding-top: 32px; display: flex; align-items: center; gap: 16px; }
+.kf {
+  width: 44px; height: 44px; flex: none; background: var(--accent); color: #fff;
+  display: grid; place-items: center; font-size: 19px; font-weight: 700; letter-spacing: -0.02em;
+}
+.kf:hover { color: #fff; }
+.brand { margin: 0; font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+.tagline { margin: 1px 0 0; font-size: 14px; font-weight: 500; color: var(--quiet); }
+
+.row {
+  display: grid; grid-template-columns: 72px minmax(0, 1fr) 180px; column-gap: 28px;
+}
+.row > .n { grid-column: 1; align-self: baseline; font-size: 22px; font-weight: 700; color: var(--accent-text); }
+.row > .body { grid-column: 2 / 4; align-self: baseline; }
+
+.title { margin-top: 22px; border-top: 4px solid var(--ink); padding-top: 34px; }
+h1 { margin: 0; font-size: 44px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+.lede { margin: 14px 0 0; font-size: 17.5px; line-height: 1.6; color: var(--text); }
+.facts {
+  margin: 22px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+}
+.facts > div { padding: 10px 14px 12px 0; }
+.facts > div + div { padding-left: 14px; border-left: 1px solid var(--rule); }
+.facts dt {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--quiet);
+}
+.facts dd { margin: 3px 0 0; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+
+main { margin-top: 44px; }
+article.row { padding: 22px 0 36px; border-top: 1px solid var(--rule); }
+h2 { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+p.t { margin: 8px 0 0; font-size: 16.5px; line-height: 1.6; color: var(--text); }
+p.t + p.t { margin-top: 12px; }
+ol.steps {
+  margin: 16px 0 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px;
+  font-size: 16px; line-height: 1.6; color: var(--text);
+}
+a.inline { color: var(--accent-text); font-weight: 600; border-bottom: 1px solid rgba(143, 42, 25, 0.4); }
+.tip { margin: 16px 0 4px; padding: 12px 16px 13px; border-left: 3px solid var(--accent); background: var(--box); }
+.tip .label {
+  display: block; margin-bottom: 3px; font-family: var(--mono); font-size: 11.5px;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-text);
+}
+.tip p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text); }
+
+.linkbox {
+  margin-top: 18px; display: flex; align-items: center; gap: 16px; padding: 14px 16px;
+  border: 1px solid var(--ink); background: var(--box);
+}
+.linkbox .url { min-width: 0; overflow-wrap: anywhere; font-family: var(--mono); font-size: 13px; }
+.linkbox .go { margin-left: auto; flex: none; font-weight: 600; color: var(--accent-text); }
+
+/* the patcher */
+.panel { margin-top: 20px; background: var(--panel); color: var(--panel-ink); border: 1px solid var(--ink); }
+.drop {
+  margin: 14px; min-height: 150px; padding: 24px; cursor: pointer; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  border: 1.5px dashed rgba(227, 229, 227, 0.4);
+}
+.drop:focus-visible { outline: 2px solid var(--hot); outline-offset: 2px; }
+.drop.over { border-color: var(--hot); background: rgba(217, 72, 46, 0.12); }
+.drop.bad { border-color: var(--bad); }
+.drop .big { margin: 0; font-size: 18px; font-weight: 600; overflow-wrap: anywhere; }
+.drop .big.file { font-family: var(--mono); font-size: 14px; font-weight: 400; }
+.drop .small { margin: 0; font-family: var(--mono); font-size: 12px; color: var(--panel-dim); }
+.status {
+  margin: 0 14px; padding: 12px 0; border-top: 1px solid var(--panel-line);
+  font-family: var(--mono); font-size: 12.5px; line-height: 1.75; min-height: 48px; color: var(--panel-dim);
+}
+.status.ok { color: var(--ok); }
+.status.bad { color: var(--bad); }
+.actions { padding: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.btn {
+  height: 44px; padding: 0 22px; border: 0; display: inline-flex; align-items: center; gap: 10px;
+  font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
+  background: var(--accent); color: #fff; cursor: pointer;
+}
+.btn:hover { color: #fff; }
+.btn:disabled { background: rgba(227, 229, 227, 0.12); color: rgba(227, 229, 227, 0.5); cursor: not-allowed; }
+.btn.ghost {
+  padding: 0 16px; border: 1px solid rgba(227, 229, 227, 0.35); background: transparent;
+  color: var(--panel-ink); font-family: var(--mono); font-size: 12px; font-weight: 400;
+}
+.state { margin-left: auto; font-family: var(--mono); font-size: 11.5px; color: var(--panel-dim); }
+[hidden] { display: none !important; }
+
+footer.site {
+  margin-top: 56px; border-top: 4px solid var(--ink); padding-top: 16px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 20px;
+  font-size: 14px; font-weight: 500; color: var(--quiet);
+}
+footer.site p { margin: 0; }
+footer.site nav { display: flex; flex-wrap: wrap; gap: 22px; font-weight: 600; }
+footer.site .star { color: var(--accent-text); }
+footer.site .note { flex-basis: 100%; font-size: 13px; }
+
+@media (max-width: 720px) {
+  .wrap { padding: 0 20px 44px; }
+  .row { grid-template-columns: 34px minmax(0, 1fr); column-gap: 14px; }
+  .row > .body { grid-column: 2; }
+  h1 { font-size: 32px; }
+  h2 { font-size: 22px; }
+  .state { margin-left: 0; flex-basis: 100%; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facts > div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .facts > div:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="row title">
+    <span class="n">01</span>
+    <div class="body">
+      <h1>DOOM OS patcher</h1>
+      <dl class="facts">
+        <div><dt>Version</dt><dd data-doomos="version"></dd></div>
+        <div><dt>Build</dt><dd data-doomos="build"></dd></div>
+        <div><dt>Firmware</dt><dd data-doomos="firmware"></dd></div>
+        <div><dt>Released</dt><dd data-doomos="released"></dd></div>
+      </dl>
+    </div>
+  </section>
+  <main>
+    <article class="row">
+      <span class="n">1</span>
+      <div class="body">
+        <p class="t">Compatible with firmware <strong data-doomos="firmware-list"></strong>.</p>
+        <div id="doomos-patcher"></div>
+        <p class="t">Instructions: <a class="inline" href="https://klangfeldlabs.com/doom-os/patcher">klangfeldlabs.com/doom-os/patcher</a></p>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="doomos-patcher.js"></script>
+</body>
+</html>
