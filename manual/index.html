@@ -183,7 +183,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
 <div class="wrap">
   <header class="site">
     <div class="brand">DOOM OS<span>for the SP-404MK2</span></div>
-    <div class="ver">0.6 alpha</div>
+    <div class="ver">0.6.1 alpha</div>
   </header>
 
   <div class="title">
@@ -273,7 +273,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
 
   <section class="part" id="views">
     <h2>Views</h2>
-    <p class="sub"><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd> steps through five views of the grid. In the zoomed view, <kbd>REMAIN</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd> zooms out. <kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd> goes to the next bar, or the next beat in the zoomed view.</p>
+    <p class="sub"><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd> steps through five views of the grid. In the zoomed view, <kbd>REMAIN</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd> zooms out. <kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd> goes to the next bar, or the next beat in the zoomed view. While a pattern plays the grid follows it from bar to bar; <kbd>SHIFT</kbd><span class="plus">+</span><kbd>HOLD</kbd> keeps it on the bar you picked, and again follows.</p>
     <figure class="panels">
       <img src="img/doomos-views.gif" width="1040" height="560" alt="SHIFT + RECORD SETTING steps the grid through GRID, LABELS, BEATS, BOTH and ZOOM, each named over the header; REMAIN + turning VALUE zooms out to one bar and two bars; one more press goes back to the grid.">
     </figure>
@@ -289,7 +289,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
 
   <section class="part" id="rec">
     <h2>Recording</h2>
-    <p class="sub"><kbd>REC</kbd> once rehearses: the pads play and nothing is recorded. <kbd>REC</kbd> again records, and <kbd>EXIT</kbd> stops. <kbd>HOLD</kbd> turns the pads into normal pads to play along. The record mode, SINGLE, MULTI or CHROMATIC, is in the pattern panel and on a shortcut.</p>
+    <p class="sub"><kbd>REC</kbd> once rehearses: the pads play and nothing is recorded. <kbd>REC</kbd> again records, and <kbd>EXIT</kbd> stops. <kbd>HOLD</kbd> turns the pads into normal pads to play along. The record mode, SINGLE, MULTI or CHROMATIC, is in the pattern panel and on a shortcut. <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 9</kbd> sets the metronome: ON clicks while you rehearse and record, RECPLAY whenever the pattern plays, OFF.</p>
     <div class="tabs">
       <!-- a radio and its label per tab, then one .tab per label, in the same order -->
       <input type="radio" name="rec" id="rec-1" checked>
@@ -384,6 +384,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
         <tr data-k="length gate duration long short all track"><th scope="row">Same length for every note</th><td><kbd>CTRL 2</kbd></td></tr>
         <tr data-k="nudge timing micro shift early late offset all track tighten quantise quantize"><th scope="row">Same nudge for every note</th><td><kbd>CTRL 3</kbd></td></tr>
         <tr data-k="mute unmute silence"><th scope="row">Mute / unmute</th><td><kbd>SHIFT</kbd> + press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="solo alone only isolate blink blinking"><th scope="row">Solo / solo off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd> &mdash; <kbd>ROLL</kbd> blinks while a track plays solo</td></tr>
         <tr data-k="solo"><th scope="row">Solo</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SOLO</span></td></tr>
         <tr data-k="volume level gain"><th scope="row">Track volume</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">VOLUME</span></td></tr>
         <tr data-k="copy"><th scope="row">Copy the track</th><td><kbd>COPY</kbd></td></tr>
@@ -411,7 +412,9 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <h3>Bars and views</h3>
       <table>
         <tr data-k="bar page next previous measure"><th scope="row">Next / previous bar</th><td><kbd>SHIFT</kbd> + turn <kbd>VALUE</kbd></td></tr>
-        <tr data-k="length bars pattern long"><th scope="row">Pattern length in bars</th><td><kbd>RECORD SETTING</kbd> twice <span class="then" aria-label="then">&rsaquo;</span> <span class="item">LENGTH</span></td></tr>
+        <tr data-k="length bars pattern long shorter crop cut"><th scope="row">Pattern length in bars</th><td><kbd>RECORD SETTING</kbd> twice <span class="then" aria-label="then">&rsaquo;</span> <span class="item">LENGTH</span>. Shorter with notes past the new end, it asks <span class="item">CROP TO 2 BARS</span> first: <kbd>YES</kbd> cuts them off, <kbd>NO</kbd> keeps the pattern</td></tr>
+        <tr data-k="time signature meter 3/4 2/4 1/4 4/4 5/4 6/4 7/4 waltz beats view only"><th scope="row">Time signature of a new pattern</th><td>on the box&#x27;s own <span class="item">RECORD SETTING</span>, before you record: <kbd>SHIFT</kbd><span class="plus">+</span><kbd>CTRL 2</kbd> <span class="item">TIME SIGN</span>. DOOM OS shows it behind <span class="item">LENGTH</span>. A pattern in 5/4, 6/4 or 7/4 shows the first sixteen steps of each bar and is not edited: <span class="item">7/4: VIEW ONLY</span></td></tr>
+        <tr data-k="follow playhead stay lock bar scroll jump page"><th scope="row">Follow the playhead, or stay on your bar</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>HOLD</kbd></td></tr>
         <tr data-k="view zoom grid lines beats labels"><th scope="row">Grid lines / zoomed view</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
         <tr data-k="zoom"><th scope="row">Zoom in / out (zoomed view)</th><td><kbd>REMAIN</kbd> + turn <kbd>VALUE</kbd></td></tr>
         <tr data-k="zoom beat"><th scope="row">Next / previous beat (zoomed view)</th><td><kbd>SHIFT</kbd> + turn <kbd>VALUE</kbd></td></tr>
@@ -436,6 +439,8 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
         <tr data-k="new notes quantise quantize swing record settings"><th scope="row">Quantise, swing, velocity, length of new notes</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN EDIT</kbd></td></tr>
         <tr data-k="hold play pads finger drum"><th scope="row">Pads play samples instead of steps</th><td><kbd>HOLD</kbd></td></tr>
         <tr data-k="fixed velocity"><th scope="row">Fixed velocity on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 1</kbd></td></tr>
+        <tr data-k="metronome click count tick recplay"><th scope="row">Metronome: on / recplay / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 9</kbd></td></tr>
+        <tr data-k="ext source external input line mic guitar usb audio phone computer monitor"><th scope="row">Inputs on / off: line in, mic, USB audio</th><td><kbd>EXT SOURCE</kbd></td></tr>
         <tr data-k="record automation motion knob"><th scope="row">Record knob moves</th><td>effect page open, <kbd>REC</kbd> twice, turn <kbd>CTRL</kbd> knobs</td></tr>
       </table>
     </section>
@@ -464,6 +469,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
         <tr data-k="bus fx send routing dry"><th scope="row">Bus: B1, B2 or DRY</th><td><kbd>CTRL 2</kbd></td></tr>
         <tr data-k="level volume fader"><th scope="row">Level</th><td><kbd>CTRL 3</kbd></td></tr>
         <tr data-k="mute"><th scope="row">Mute / unmute</th><td><kbd>SHIFT</kbd> + press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="solo alone only isolate"><th scope="row">Solo / solo off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd></td></tr>
         <tr data-k="meter display"><th scope="row">Level as arrows / dithered</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
         <tr data-k="back close mixer"><th scope="row">Back to the grid</th><td><kbd>EXIT</kbd></td></tr>
       </table>
@@ -500,7 +506,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
     <section class="group" id="settings">
       <h3>Settings</h3>
       <table>
-        <tr data-k="settings boot animation grid lines"><th scope="row">DOOM OS settings</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SYSTEM</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">DOOM OS</span> tab</td></tr>
+        <tr data-k="settings boot animation grid lines follow"><th scope="row">DOOM OS settings</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SYSTEM</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">DOOM OS</span> tab</td></tr>
         <tr data-k="shortcut custom combo"><th scope="row">Your own shortcuts</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SYSTEM</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SHORTCUT</span> tab</td></tr>
         <tr data-k="utility menu"><th scope="row">Utility menu</th><td><kbd>REMAIN</kbd><span class="plus">+</span><kbd>PATTERN EDIT</kbd></td></tr>
         <tr data-k="pattern select screen"><th scope="row">The box&#x27;s pattern screen</th><td><kbd>REMAIN</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
@@ -510,7 +516,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
   </section>
 
   <footer class="site">
-    <span>DOOM OS 0.6 alpha &middot; Klangfeld Labs</span>
+    <span>DOOM OS 0.6.1 alpha &middot; Klangfeld Labs</span>
     <nav>
       <a href="https://klangfeldlabs.com/doom-os" target="_blank" rel="noopener">klangfeldlabs.com/doom-os &#8599;</a>
       <a href="https://github.com/klangfeld-labs/doom-os" target="_blank" rel="noopener">DOOM OS on GitHub &#8599;</a>
