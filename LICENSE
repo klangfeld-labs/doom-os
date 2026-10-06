@@ -1,21 +1,81 @@
-MIT License
+DOOM OS License
 
-Copyright (c) 2026 Quintus Oostendorp
+Copyright (c) 2026 Quintus Oostendorp (Klangfeld Labs). All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+DOOM OS is free to use. It is not free to copy, change or pass on. This
+licence says what you may do with it.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. What this licence covers
+
+"DOOM OS" means the patch, the patcher, and everything they put on an
+SP-404MK2: the code, the screens with their layout and design, the pixel
+art, icons, typefaces and animations made for it, and its texts. It also
+covers the manual and the artwork published with it.
+
+DOOM OS contains no part of Roland's firmware. That firmware belongs to
+Roland Corporation and is not covered by this licence. The typefaces of the
+manual's web page (Barlow, IBM Plex Mono) keep their own licence, the SIL
+Open Font License 1.1.
+
+
+2. What you may do, free of charge
+
+- Use the patcher to patch firmware you got from Roland, for an SP-404MK2
+  you own or use, and keep copies of what it made for your own units.
+- Use DOOM OS on that unit for anything, professional and commercial work
+  included: playing live, recording, releasing music, teaching. What you
+  make with DOOM OS is yours. We claim no right in it.
+- Talk about DOOM OS and show it: reviews, videos, screenshots, tutorials
+  and posts, with a link to the official release.
+
+
+3. What you may not do without written permission
+
+- Pass on the patch, the patcher or a patched firmware file, or host them
+  anywhere else. Link to the official release instead.
+- Change DOOM OS, or copy or closely imitate its code, screens, layouts,
+  graphics or texts in anything else: other firmware, patches, apps or
+  designs. This holds however the material was obtained, taking DOOM OS
+  apart included.
+- Sell DOOM OS, rent it out, or charge for it or for access to it.
+- Remove or change its copyright notices, or present DOOM OS or any part of
+  it as your own work.
+- Use the name "DOOM OS" or its logo for anything else.
+
+To ask for permission: lab@klangfeldlabs.com
+
+
+4. Studying DOOM OS
+
+You may study how DOOM OS works, and what you learn about the SP-404MK2
+and its firmware is yours to use, in firmware of your own too. Section 3
+protects the work itself: its code, screens, layouts, graphics and texts.
+This licence does not take away anything else the law allows you
+regardless of it.
+
+
+5. No warranty
+
+DOOM OS is an unofficial modification of your instrument's firmware and is
+provided "as is", without warranty of any kind. You install it at your own
+risk. To the extent the law allows, the author is not liable for any damage
+arising from its use, including damage to your device, loss of patterns,
+samples or other data, and lost income.
+
+
+6. Roland
+
+DOOM OS is not affiliated with, endorsed by or supported by Roland
+Corporation. Roland and SP-404 are trademarks of Roland Corporation.
+
+
+7. When the licence ends
+
+If you break these terms, your permissions under section 2 end
+automatically.
+
+
+8. Law
+
+This licence is governed by the laws of the Netherlands.

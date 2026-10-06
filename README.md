@@ -87,4 +87,4 @@ Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ## Disclaimer
 
-This is an unofficial project, not affiliated with or endorsed by Roland. Modifying your firmware is at your own risk and may void your warranty. DOOM OS is named in tribute to MF DOOM. Made by Klangfeld Labs, MIT licensed ([LICENSE](LICENSE)).
+This is an unofficial project, not affiliated with or endorsed by Roland. Modifying your firmware is at your own risk and may void your warranty. DOOM OS is named in tribute to MF DOOM. Made by Klangfeld Labs. Free to use, commercial music included; copying, changing or passing it on needs permission ([LICENSE](LICENSE)).

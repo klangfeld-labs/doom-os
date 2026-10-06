@@ -1,10 +1,15 @@
 # Changelog
 
+## 0.6.2-alpha, build 3824 (2026-10-06)
+
+- **The AUTO TRIG shortcut no longer freezes the box on MARK**
+- **The patcher shows the checksums the stock firmware and patched firmware**  
+
 ## 0.6.1-alpha, build ED5E (2026-10-04)
 
 **New**
 
-- **Pattern Follow can be toggled with SHIFT + HOLD**  
+- **Pattern Follow (autoscroll) can be toggled with SHIFT + HOLD**  
   The pattern will stay on the currently selected measure or follow the playback head.
 - **Solo is now mapped to SHIFT + ROLL**    
   The **ROLL** button blinks when solo is active.
@@ -27,11 +32,6 @@
 **Miscellaneous**
 - **The pattern mode now supports various time signatures internally**  
   For future stock compatibility reasons.
-
-## 0.6-alpha, build 0C34 (2026-09-28)
-
-The first public release, for firmware 5.52.
-
 
 ## 0.6-alpha, build 0C34 (2026-09-28)
 
