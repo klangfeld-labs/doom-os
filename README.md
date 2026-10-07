@@ -8,7 +8,7 @@ DOOM OS is a heavily modified version of the original 5.52 firmware. It adds a g
 sequencer, a mixer, effect automation, custom shortcuts and more, and improves parts of the original
 firmware. You patch it yourself, in your browser, using the official firmware file from Roland.
 
-Current version: 0.6.1-alpha, build ED5E (2026-10-04)
+Current version: 0.6.2-alpha, build 3824 (2026-10-06)
 
 **[Quick installation: Use the web patcher to install DOOM OS](https://klangfeldlabs.com/doom-os/patcher)**
 
@@ -56,7 +56,7 @@ To go back to the original firmware, just run the updater with the original Rola
 
 | Control | What it does |
 |---|---|
-| **REMAIN** + **SUB PAD** | Open DOOM OS (works from any screen) |
+| **REMAIN** + **SUB PAD** | Open DOOM OS! (works from any screen) |
 | **EXIT** | Close DOOM OS and save your changes |
 | Hold **SHIFT** for 3 seconds | Help mode: press any control to see what it does |
 | **PATTERN SELECT** | Start / stop |
@@ -77,12 +77,15 @@ The full guide and every control are in the [manual](https://klangfeldlabs.com/d
 
 ## Coming next
 
-Song mode, a sample editor, an effects editor, a guided tutorial, and an SDK so you can build your own screens.
+This is not a roadmap, but upcoming features include built-in instruments, song mode, clip launcher, a sample editor, an effects editor, a guided tutorial, and at a later stage an SDK or module-like system to integrate other people's addons.
 
 ## Status
 
 This is an alpha. It has been tested on my own SP-404MK2, but expect some rough edges.
-Found a bug? Open an issue and include the version shown on the VERSION tab in *Utility → System*.
+Found a bug? Open an issue and include the version shown on the VERSION tab in *Utility → System*. 
+
+You can also drop feature requests at the DOOM OS subreddit at [reddit.com/DOOMOS](https://reddit.com/DOOMOS).  
+
 Changes are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ## Disclaimer
