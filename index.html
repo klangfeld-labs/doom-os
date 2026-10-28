@@ -124,7 +124,11 @@ a.inline { color: var(--accent-text); font-weight: 600; border-bottom: 1px solid
   color: var(--panel-dim); font-family: var(--mono); font-size: 11px; cursor: pointer;
 }
 .hashes .copy:hover { color: var(--panel-ink); }
-.hashes .note { margin: 10px 0 0; font-family: var(--mono); font-size: 11.5px; color: var(--panel-dim); }
+.sums { margin: 12px 0 0; font-family: var(--mono); font-size: 11.5px; line-height: 1.6; color: var(--quiet); }
+.sums > div { display: flex; flex-wrap: wrap; column-gap: 12px; }
+.sums dt { flex: none; }
+.sums dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.sums code { font-family: inherit; }
 .actions { padding: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 .btn {
   height: 44px; padding: 0 22px; border: 0; display: inline-flex; align-items: center; gap: 10px;
@@ -183,6 +187,7 @@ footer.site .note { flex-basis: 100%; font-size: 13px; }
       <div class="body">
         <p class="t">Compatible with firmware <strong data-doomos="firmware-list"></strong>.</p>
         <div id="doomos-patcher"></div>
+        <dl class="sums" data-doomos="checksums"></dl>
         <p class="t">Instructions: <a class="inline" href="https://klangfeldlabs.com/doom-os/patcher">klangfeldlabs.com/doom-os/patcher</a></p>
       </div>
     </article>

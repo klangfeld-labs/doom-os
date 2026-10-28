@@ -106,14 +106,6 @@ h2 { margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -.02em; line-
 .knobs th { width: 38%; font-weight: 400; }
 .knobs td { font-weight: 600; font-size: 17px; }
 .knobs td small { display: block; font-weight: 400; font-size: 14px; color: var(--quiet); }
-.one-turn { margin-top: 26px; padding: 22px 24px 20px; background: var(--feature); color: var(--feature-ink);
-  border-left: 4px solid var(--accent); }
-.one-turn h3 { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; }
-.one-turn p { margin: 6px 0 0; font-size: 17px; line-height: 1.5; color: var(--feature-dim); }
-.one-turn ul { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
-.one-turn li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; align-items: baseline; font-size: 17.5px;
-  line-height: 1.45; font-weight: 500; }
-.one-turn kbd { background: #2a2d2f; color: #e3e5e3; border-color: rgba(227,229,227,.35); justify-self: start; }
 .facts { margin: 22px 0 0; padding: 14px 18px; background: var(--box); border-left: 3px solid var(--accent);
   display: grid; gap: 8px; font-size: 16px; line-height: 1.5; color: var(--text); }
 .facts p { margin: 0; }
@@ -183,18 +175,18 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
 <div class="wrap">
   <header class="site">
     <div class="brand">DOOM OS<span>for the SP-404MK2</span></div>
-    <div class="ver">0.6.1 alpha</div>
+    <div class="ver">0.7</div>
   </header>
 
   <div class="title">
     <h1>DOOM OS Quickstart</h1>
-    <p class="lede">Every DOOM OS control on one page. Anything not listed works as it always does on the SP-404MK2.</p>
+    <p class="lede">Every DOOM OS control on one page. Anything not listed here works as it does on a stock SP-404MKII.</p>
   </div>
 
   <div class="open">
     <p class="lab">Open DOOM OS</p>
     <p class="keys"><span>Hold</span><kbd>REMAIN</kbd><span class="plus">+</span><span>press</span><kbd>SUB PAD</kbd></p>
-    <p class="sub">Works from any screen of the box. <kbd>EXIT</kbd> closes it.</p>
+    <p class="sub">This works from any screen. Press <kbd>EXIT</kbd> to close DOOM OS and save your changes.</p>
   </div>
 
   <div class="find" role="search">
@@ -202,29 +194,36 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
     <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="undo, tempo, mute, nudge ...">
     <div class="hits" id="hits" hidden aria-live="polite"></div>
     <nav class="jump" aria-label="Sections">
-      <a href="#first">First pattern</a><a href="#ctrl">The CTRL knobs</a><a href="#views">Views</a><a href="#roll">Piano roll</a><a href="#rec">Recording</a><a href="#tools">Pattern tools</a><a href="#mix">Mixer</a><a href="#auto">Automation</a><a href="#help">Help</a><a href="#all">All controls</a>
+      <a href="#first">Getting Started</a><a href="#ctrl">Note Editing</a><a href="#menus">TRACK Page and PATTERN Panel</a><a href="#views">Grid Views</a><a href="#roll">Piano Roll</a><a href="#rec">Recording</a><a href="#bounce">Bounce in Place</a><a href="#instruments">Instruments and Kits</a><a href="#plocks">Parameter Locks</a><a href="#arp">Arpeggiator</a><a href="#tools">Pattern Tools</a><a href="#mix">Mixer</a><a href="#eq">EQ</a><a href="#wave">Waveform Display</a><a href="#fx">Effects</a><a href="#sidechain">Side Chain</a><a href="#auto">FX Automation</a><a href="#help">Help Mode</a><a href="#settings">DOOM OS Settings</a><a href="#all">All Controls</a>
     </nav>
   </div>
 
   <section class="part" id="first">
-    <h2>Your first pattern</h2>
+    <h2>Getting Started</h2>
+    <p class="sub">These steps create a new pattern and give it its first track.</p>
     <ol class="first">
-      <li><span>Hold <kbd>REMAIN</kbd> and press <kbd>SUB PAD</kbd>. DOOM OS opens.</span></li>
-      <li><span>Hold <kbd>PATTERN SELECT</kbd> and press an empty pattern pad.</span></li>
-      <li><span>Hold <kbd>SUB PAD</kbd>, tap pads to listen, and let go on the sound you want. That is your first track.</span></li>
-      <li><span>Tap pads to set steps. Press <kbd>PATTERN SELECT</kbd> to play.</span></li>
-      <li><span>Shape the notes with the <a href="#ctrl">CTRL knobs</a>.</span></li>
-      <li><span>Hold <kbd>SUB PAD</kbd> again for the next sound.</span></li>
+      <li><span>Hold <kbd>REMAIN</kbd> and press <kbd>SUB PAD</kbd> to open DOOM OS. The step grid appears.</span></li>
+      <li><span>Hold <kbd>PATTERN SELECT</kbd> and press an empty pad. A new, empty pattern opens.</span></li>
+      <li><span>Hold <kbd>SUB PAD</kbd>. The pads that hold a sample light up.</span></li>
+      <li><span>Tap these pads to audition their samples, then release <kbd>SUB PAD</kbd>. The last pad you tapped becomes the pattern's first track.</span></li>
+      <li><span>Tap pads to enter steps. The 16 pads are the 16 steps of the selected track.</span></li>
+      <li><span>Press <kbd>PATTERN SELECT</kbd> to start or stop playback.</span></li>
+      <li><span>Turn the CTRL knobs to set the velocity, length and nudge of the notes (see <a href="#ctrl">Note Editing</a>).</span></li>
+      <li><span>To add another track, repeat steps 3 and 4.</span></li>
     </ol>
     <figure class="panels">
-      <img src="img/doomos-record-setting-panels.gif" width="1040" height="560" alt="RECORD SETTING opens the track panel, where turning VALUE walks the rows; pressed again it opens the pattern panel, where VALUE changes the tempo; pressed a third time it closes.">
-      <figcaption>Press <kbd>RECORD SETTING</kbd> once for the track panel, twice for the pattern panel, a third time to close. Turn <kbd>VALUE</kbd> to choose a row, press it to change the value.</figcaption>
+      <img src="img/doomos-grid.png" width="1040" height="490" alt="The step grid: the pattern's tracks down the left, the steps of the bar across, each note a block on its step.">
     </figure>
+    <p class="sub">Press <kbd>RECORD SETTING</kbd> to open the menus (see <a href="#menus">TRACK Page and PATTERN Panel</a>).</p>
+    <div class="facts">
+      <p><b>Existing patterns:</b> after you switch on the SP-404MKII, a saved pattern can be edited only once it has played. Press <kbd>PATTERN SELECT</kbd> to play it first; until then, tapping the pads changes nothing.</p>
+      <p><b>Switching while it plays:</b> hold <kbd>PATTERN SELECT</kbd> and press another pattern's pad. The playing pattern plays to its end, then the new one starts. Until then the screen shows <span class="item">NEXT: A2</span>, and the playing pattern cannot be edited, recorded or bounced. To switch at once, hold <kbd>SUB PAD</kbd> as well; with <kbd>REC</kbd> on, the new pattern always starts at once. Stopping playback does not cancel the switch: the next start plays the pattern to its end first. To cancel it, select a pattern while playback is stopped.</p>
+    </div>
   </section>
 
   <section class="part" id="ctrl">
-    <h2>The CTRL knobs</h2>
-    <p class="sub"><kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd> edit notes. Turn one and every note on the selected track takes its value. Hold a step's pad while you turn and only that note changes.</p>
+    <h2>Note Editing</h2>
+    <p class="sub">On the step grid, <kbd>CTRL 1</kbd>, <kbd>CTRL 2</kbd> and <kbd>CTRL 3</kbd> set the velocity, length and nudge of notes. Turn a knob with no pad held to set every note on the selected track to the same value. Hold a step's pad while you turn to change that note only.</p>
 
     <div class="tabs">
       <!-- a radio and its label per tab, then one .tab per label, in the same order -->
@@ -233,63 +232,114 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <input type="radio" name="ctrl" id="ctrl-2">
       <label for="ctrl-2">One note</label>
       <div class="tab">
-        <p class="how">Turn <kbd>VALUE</kbd> to pick the track, then turn a knob.</p>
+        <p class="how">Turn <kbd>VALUE</kbd> to select the track, then turn a knob.</p>
         <img src="img/doomos-ctrl-track-length.gif" width="1040" height="560" alt="The step grid with track A9 selected. Turning CTRL 2 makes every note on the track longer, from one step to four.">
         <table class="knobs">
-          <tr><th><kbd>CTRL 1</kbd></th><td>Same velocity for every note</td></tr>
-          <tr><th><kbd>CTRL 2</kbd></th><td>Same length for every note</td></tr>
-          <tr><th><kbd>CTRL 3</kbd></th><td>Same nudge for every note<small>the middle puts every note exactly on its step</small></td></tr>
+          <tr><th><kbd>CTRL 1</kbd></th><td>Velocity of every note</td></tr>
+          <tr><th><kbd>CTRL 2</kbd></th><td>Length of every note</td></tr>
+          <tr><th><kbd>CTRL 3</kbd></th><td>Nudge of every note<small>at the center position, every note is exactly on its step</small></td></tr>
         </table>
       </div>
       <div class="tab">
-        <p class="how">Hold the note's <kbd>pad</kbd> and turn a knob.</p>
+        <p class="how">Hold the step's <kbd>pad</kbd> and turn a knob.</p>
         <img src="img/doomos-ctrl-note-length.gif" width="1040" height="560" alt="Pad 9 held on track A9. The top line shows VEL 90, LEN and MIC. Turning CTRL 2 makes that one note longer while the others stay the same.">
         <table class="knobs">
           <tr><th><kbd>CTRL 1</kbd></th><td>Velocity</td></tr>
-          <tr><th><kbd>CTRL 2</kbd></th><td>Length<small>an eighth of a step up to a whole bar</small></td></tr>
-          <tr><th><kbd>CTRL 3</kbd></th><td>Nudge<small>early or late; the middle is on the grid</small></td></tr>
+          <tr><th><kbd>CTRL 2</kbd></th><td>Length<small>from a 1/128 note to a whole bar, shown as a note value: <span class="item">LEN 3/32</span></small></td></tr>
+          <tr><th><kbd>CTRL 3</kbd></th><td>Nudge<small>earlier or later; at the center position, the note is exactly on its step</small></td></tr>
           <tr><th><kbd>SHIFT</kbd><span class="plus">+</span><kbd>CTRL 1</kbd></th><td>Pitch<small>up to 12 semitones up or down</small></td></tr>
+          <tr><th><kbd>SHIFT</kbd><span class="plus">+</span><kbd>CTRL 2</kbd></th><td>Length, fine<small>1/128 at a time, from the note's own length</small></td></tr>
         </table>
       </div>
     </div>
 
-    <div class="one-turn">
-      <h3>Every note gets the same value</h3>
-      <p>With no pad held, the knob sets every note on the track to the same value. For example:</p>
-      <ul>
-        <li><kbd>CTRL 1</kbd><span>All hits of a hi-hat at the same velocity.</span></li>
-        <li><kbd>CTRL 2</kbd><span>All stabs the same length, short or long.</span></li>
-        <li><kbd>CTRL 3</kbd><span>All notes the same distance off the grid. In the middle, every note is exactly on its step.</span></li>
-      </ul>
-    </div>
-
     <div class="facts">
-      <p><b>While you hold a pad</b> the top line shows that note: <b>VEL</b> velocity, <b>LEN</b> length in steps, <b>MIC</b> nudge.</p>
-      <p><b>Hands free:</b> hold the pad and press <kbd>REMAIN</kbd>. The note stays selected after you let go; press <kbd>REMAIN</kbd> again to release it.</p>
-      <p><b>Went too far?</b> <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd> undoes the whole turn.</p>
+      <p><b>Note values:</b> while you hold a pad, the top line shows the note's <b>VEL</b> (velocity), <b>LEN</b> (length in steps) and <b>MIC</b> (nudge).</p>
+      <p><b>Keep a note selected:</b> hold its pad and press <kbd>REMAIN</kbd>. The note stays selected after you release the pad. Press <kbd>REMAIN</kbd> again to deselect it.</p>
+      <p><b>Undo:</b> each knob turn is one undo step. Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd> to undo it.</p>
     </div>
   </section>
 
 
-  <section class="part" id="views">
-    <h2>Views</h2>
-    <p class="sub"><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd> steps through five views of the grid. In the zoomed view, <kbd>REMAIN</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd> zooms out. <kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd> goes to the next bar, or the next beat in the zoomed view. While a pattern plays the grid follows it from bar to bar; <kbd>SHIFT</kbd><span class="plus">+</span><kbd>HOLD</kbd> keeps it on the bar you picked, and again follows.</p>
+  <section class="part" id="menus">
+    <h2>TRACK Page and PATTERN Panel</h2>
+    <p class="sub">The <kbd>RECORD SETTING</kbd> button opens two menus: the TRACK page, with the actions and views for the selected track, and the PATTERN panel, with the pattern's settings.</p>
+    <p class="sub">Press <kbd>RECORD SETTING</kbd> once to open the TRACK page, a second time to open the PATTERN panel, and a third time to close the menus. Turn <kbd>VALUE</kbd> to select a row, and press <kbd>VALUE</kbd> to open or change it. Press <kbd>EXIT</kbd> to go back one level or to close the menu. Hold <kbd>RECORD SETTING</kbd> for 0.6 seconds to open the mixer directly. The menus open on the grid, the mixer, FX Automation, ARP and the instrument screens.</p>
     <figure class="panels">
-      <img src="img/doomos-views.gif" width="1040" height="560" alt="SHIFT + RECORD SETTING steps the grid through GRID, LABELS, BEATS, BOTH and ZOOM, each named over the header; REMAIN + turning VALUE zooms out to one bar and two bars; one more press goes back to the grid.">
+      <img src="img/doomos-menus.gif" width="1040" height="560" alt="RECORD SETTING opens the TRACK page for the selected track; VALUE turns to EDIT and opens it, EXIT goes back; RECORD SETTING again opens the PATTERN panel, and a third time closes the menus; held, it opens the mixer.">
     </figure>
+    <h3>TRACK Page</h3>
+    <table class="knobs">
+      <tr><th><span class="item">A5 KICK</span></th><td>The selected track's pad and name. Press <kbd>VALUE</kbd> here to open the track's instrument editor, or the instrument browser if the pad is empty<small>on a pad that holds a sample, nothing happens</small></td></tr>
+      <tr><th><span class="item">EDIT</span></th><td><span class="item">SWAP PAD</span>: assign the track's notes to another pad. <span class="item">PASTE</span>: replace the track's notes with the notes copied with <kbd>COPY</kbd>. <span class="item">CLEAR...</span>: delete every note on the track</td></tr>
+      <tr><th><span class="item">PATTERN</span></th><td><span class="item">CLEAR...</span>: delete every track of the pattern</td></tr>
+      <tr><th><span class="item">GENERATE</span></th><td><span class="item">PRINT ARP...</span>: write the arpeggio into the track (see <a href="#arp">Arpeggiator</a>). <span class="item">CLEAR...</span>: delete every note on the track</td></tr>
+      <tr><th><span class="item">VIEWS</span></th><td>Open the <span class="item">MIXER</span>, <span class="item">AUTOMATION</span>, <span class="item">ARP</span> or <span class="item">SIDECHAIN</span> screen</td></tr>
+    </table>
+    <h3>PATTERN Panel</h3>
+    <table class="knobs">
+      <tr><th><span class="item">BPM</span></th><td>Tempo</td></tr>
+      <tr><th><span class="item">LENGTH</span></th><td>Pattern length in bars<small>the time signature is shown beside it</small></td></tr>
+      <tr><th><span class="item">REC</span></th><td>Record mode: SINGLE, MULTI or CHROMATIC (see <a href="#rec">Recording</a>)</td></tr>
+    </table>
+    <div class="facts">
+      <p><b>Actions depend on the screen:</b> EDIT and PATTERN appear on the grid and in the mixer. GENERATE appears in ARP, and on the grid while the arpeggiator plays the selected track.</p>
+      <p><b>Confirmation:</b> DOOM OS asks before CLEAR... deletes anything. Turn <kbd>VALUE</kbd> to <span class="item">YES</span> and press <kbd>VALUE</kbd> to confirm, or press <kbd>EXIT</kbd> to cancel. <span class="item">PASTE</span> replaces the track's notes without asking.</p>
+      <p><b>Undo:</b> press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd> to undo a clear or a paste. A pattern with more than 512 notes and effect movements is too large for the undo: the question then reads <span class="item">CLEAR PATTERN, NO UNDO</span>, and no edit of that pattern can be undone.</p>
+    </div>
+  </section>
+
+  <section class="part" id="views">
+    <h2>Grid Views</h2>
+    <p class="sub">The step grid has five views. Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd> to select the next one; its name appears over the header. DOOM OS opens in the view you selected last.</p>
+    <table class="knobs">
+      <tr><th><span class="item">GRID</span></th><td>Eight tracks, one column per step</td></tr>
+      <tr><th><span class="item">LABELS</span></th><td>A line between the track names and the steps</td></tr>
+      <tr><th><span class="item">BEATS</span></th><td>Dotted lines between the beats</td></tr>
+      <tr><th><span class="item">BOTH</span></th><td>Both lines</td></tr>
+      <tr><th><span class="item">ZOOM</span></th><td>Four tracks, larger, each note drawn at its exact position and length<small>hold <kbd>REMAIN</kbd> and turn <kbd>VALUE</kbd> to zoom: one beat, one bar or two bars</small></td></tr>
+    </table>
+    <figure class="panels">
+      <img src="img/doomos-views.gif" width="1040" height="560" alt="SHIFT + RECORD SETTING steps the grid through GRID, LABELS, BEATS, BOTH and ZOOM, each named over the header; REMAIN + turning VALUE zooms out to one bar and two bars; one more press returns to the grid.">
+    </figure>
+    <div class="facts">
+      <p><b>Bars:</b> hold <kbd>SHIFT</kbd> and turn <kbd>VALUE</kbd> to select the next or previous bar. In the ZOOM view at one beat, this selects the next or previous beat.</p>
+      <p><b>Follow:</b> while a pattern plays, the grid follows the playhead from bar to bar. Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>HOLD</kbd> to stay on the selected bar (<span class="item">FOLLOW: OFF</span>); press it again to follow the playhead (<span class="item">FOLLOW: ON</span>).</p>
+    </div>
   </section>
 
   <section class="part" id="roll">
-    <h2>Piano roll</h2>
-    <p class="sub">Press <kbd>VALUE</kbd> to open the selected track as a piano roll. Hold a step's pad and press another pad as a key: pad 5 is the sound's own pitch, pads 1 to 4 go down, pads 6 to 16 go up. Press <kbd>VALUE</kbd> again to close it.</p>
+    <h2>Piano Roll</h2>
+    <p class="sub">The piano roll shows the pitch of every note on the selected track.</p>
+    <ol class="first">
+      <li><span>On the step grid, press <kbd>VALUE</kbd> to open the piano roll for the selected track.</span></li>
+      <li><span>Hold a step's pad and press another pad as a key. The step's note takes that pitch; on an empty step, a note is added.</span></li>
+      <li><span>Turn <kbd>VALUE</kbd> to scroll the piano roll. With a step's pad held, turning <kbd>VALUE</kbd> changes the note's pitch one semitone at a time.</span></li>
+      <li><span>Press <kbd>VALUE</kbd> to close the piano roll. On the grid, a note pitched up shows a mark above it, and a note pitched down a mark below it.</span></li>
+    </ol>
+    <p class="sub">The keys are laid out as in the SP-404MKII's <span class="item">CHROMATIC MODE</span>: pad 5 plays the original pitch, and the pitch rises one semitone per pad, from left to right in each row and from the bottom row to the top. Hold <kbd>SHIFT</kbd> and turn <kbd>VALUE</kbd> to select another track.</p>
     <figure class="panels">
-      <img src="img/doomos-piano-roll.gif" width="1040" height="560" alt="The bass track opens as a piano roll; with pad 8 held, pad 10 and then pad 12 move its note up 5 and 7 semitones; closed again, the note carries a mark above it.">
+      <img src="img/doomos-piano-roll.gif" width="1040" height="560" alt="The bass track opens as a piano roll; with pad 8 held, pad 2 and then pad 4 move its note up 5 and 7 semitones; closed again, the note shows a mark above it.">
     </figure>
   </section>
 
   <section class="part" id="rec">
     <h2>Recording</h2>
-    <p class="sub"><kbd>REC</kbd> once rehearses: the pads play and nothing is recorded. <kbd>REC</kbd> again records, and <kbd>EXIT</kbd> stops. <kbd>HOLD</kbd> turns the pads into normal pads to play along. The record mode, SINGLE, MULTI or CHROMATIC, is in the pattern panel and on a shortcut. <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 9</kbd> sets the metronome: ON clicks while you rehearse and record, RECPLAY whenever the pattern plays, OFF.</p>
+    <p class="sub">DOOM OS records what you play on the pads into the pattern while it plays.</p>
+    <ol class="first">
+      <li><span>Press <kbd>REC</kbd> to start rehearsal. <kbd>REC</kbd> blinks: the pads play, but nothing is recorded.</span></li>
+      <li><span>Press <kbd>REC</kbd> again to start recording. <kbd>REC</kbd> lights, and a stopped pattern starts playing.</span></li>
+      <li><span>Play the pads. Press <kbd>REC</kbd> again to return to rehearsal.</span></li>
+      <li><span>Press <kbd>EXIT</kbd> to stop recording. The pattern keeps playing.</span></li>
+    </ol>
+    <p class="sub">Each take is one undo step: press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd> to undo it. The record mode sets what the pads play and which track they record to:</p>
+    <table class="knobs">
+      <tr><th><span class="item">SINGLE</span></th><td>Every pad plays and records the selected track's sound</td></tr>
+      <tr><th><span class="item">MULTI</span></th><td>Each pad plays and records its own track</td></tr>
+      <tr><th><span class="item">CHROMATIC</span></th><td>The pads play the selected track's sound as a keyboard, laid out as in the SP-404MKII's <span class="item">CHROMATIC MODE</span>: pad 5 plays the original pitch</td></tr>
+      <tr><th><span class="item">16 VEL</span></th><td>The pads play the selected track's sound at sixteen velocities, laid out as in the SP-404MKII's <span class="item">16 VELOCITY</span>: pad 4 is the loudest, 127, and pad 13 the softest, 1</td></tr>
+    </table>
+    <p class="sub">SINGLE, CHROMATIC and 16 VEL need a selected track; without one, the pads play nothing and the screen shows <span class="item">PICK A SAMPLE</span>. Select the record mode in the PATTERN panel, or with the shortcut:</p>
     <div class="tabs">
       <!-- a radio and its label per tab, then one .tab per label, in the same order -->
       <input type="radio" name="rec" id="rec-1" checked>
@@ -297,27 +347,189 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <input type="radio" name="rec" id="rec-2">
       <label for="rec-2">Shortcut</label>
       <div class="tab">
-        <p class="how"><kbd>RECORD SETTING</kbd> twice, turn <kbd>VALUE</kbd> to REC, press <kbd>VALUE</kbd>.</p>
-        <img src="img/doomos-recording-menu.gif" width="1040" height="560" alt="RECORD SETTING twice opens the pattern panel; VALUE turns to REC and its presses step the mode to SINGLE and MULTI; the panel closes, then REC rehearses, REC records and EXIT stops.">
+        <p class="how">Press <kbd>RECORD SETTING</kbd> twice to open the PATTERN panel, turn <kbd>VALUE</kbd> to <span class="item">REC</span>, and press <kbd>VALUE</kbd> to select the next mode.</p>
       </div>
       <div class="tab">
-        <p class="how"><kbd>SHIFT</kbd><span class="plus">+</span><kbd>REC</kbd> while rehearsing or recording.</p>
-        <img src="img/doomos-recording-shortcut.gif" width="1040" height="560" alt="REC shows REHEARSAL, SHIFT + REC switches the mode to MULTI, REC again records while the pattern plays, EXIT stops.">
+        <p class="how">During rehearsal or recording, press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>REC</kbd> to select the next mode.</p>
+        <img src="img/doomos-recording-shortcut.gif" width="1040" height="560" alt="REC shows REHEARSAL, SHIFT + REC selects the next record mode, REC again records while the pattern plays, EXIT stops recording.">
       </div>
+    </div>
+    <div class="facts">
+      <p><b>Metronome:</b> press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 9</kbd> to select <span class="item">ON</span> (clicks during rehearsal and recording), <span class="item">RECPLAY</span> (clicks whenever the pattern plays) or <span class="item">OFF</span>.</p>
+      <p><b>Input quantize:</b> press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN EDIT</kbd> to open <span class="item">NEW NOTES</span>, the settings for recorded notes: <span class="item">QNT</span> (quantize grid), <span class="item">SWG</span> (swing), <span class="item">VEL</span> (live or fixed velocity) and <span class="item">LEN</span> (live or fixed length).</p>
+      <p><b>HOLD:</b> <kbd>REC</kbd> turns <kbd>HOLD</kbd> off, and <kbd>HOLD</kbd> does nothing while <kbd>REC</kbd> is on.</p>
+    </div>
+  </section>
+
+  <section class="part" id="bounce">
+    <h2>Bounce in Place</h2>
+    <p class="sub">DOOM OS records the selected track, or everything you hear, with its effects onto the bank's next empty pad. A track bounced this way is put in place: its notes are replaced by one note of the new pad.</p>
+    <div class="tabs">
+      <!-- a radio and its label per tab, then one .tab per label, in the same order -->
+      <input type="radio" name="bounce" id="bounce-1" checked>
+      <label for="bounce-1">Shortcut</label>
+      <input type="radio" name="bounce" id="bounce-2">
+      <label for="bounce-2">Menu</label>
+      <div class="tab">
+        <ol class="first">
+          <li><span>Select a track and press <kbd>RESAMPLE</kbd>. To record everything you hear instead, press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>RESAMPLE</kbd>.</span></li>
+          <li><span>Turn <kbd>VALUE</kbd> to <span class="item">CUT...</span>, <span class="item">TAIL...</span> or <span class="item">LOOP...</span> and press <kbd>VALUE</kbd>.</span></li>
+          <li><span>Select <span class="item">YES</span>. The pattern plays from its start while it is recorded; <kbd>RESAMPLE</kbd> blinks.</span></li>
+        </ol>
+      </div>
+      <div class="tab">
+        <p class="how">Press <kbd>RECORD SETTING</kbd> to open the TRACK page and select <span class="item">EDIT</span> <span class="then">&rsaquo;</span> <span class="item">BOUNCE</span> for the selected track, or <span class="item">PATTERN</span> <span class="then">&rsaquo;</span> <span class="item">BOUNCE</span> for everything you hear. Then select <span class="item">CUT...</span>, <span class="item">TAIL...</span> or <span class="item">LOOP...</span> and <span class="item">YES</span>.</p>
+      </div>
+    </div>
+    <figure class="panels">
+      <img src="img/doomos-bounce.gif" width="1040" height="560" alt="RESAMPLE opens the BOUNCE rows of the TRACK page for the selected track, B3 FM, on CUT...; VALUE turns to TAIL...; a press asks BOUNCE TRACK B3 with NO and YES; EXIT returns to the grid without recording.">
+    </figure>
+    <table class="knobs">
+      <tr><th><span class="item">CUT</span></th><td>The pattern's length</td></tr>
+      <tr><th><span class="item">TAIL</span></th><td>The pattern, then on until the effects have rung out (30 seconds at most)</td></tr>
+      <tr><th><span class="item">LOOP</span></th><td>The pattern's length, taken from its second pass, so the sample loops as the pattern does</td></tr>
+    </table>
+    <div class="facts">
+      <p><b>The new pad:</b> the bank's next pad with no sample and no note in the pattern, named <span class="item">BOUNCE</span> and the track's pad. Nothing on another pad is overwritten. The screen shows <span class="item">NO EMPTY PAD</span> when the bank has none.</p>
+      <p><b>In place:</b> a track's bounce plays the track solo, then replaces its notes with one note of the new pad on the first step. Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd> to undo it; the old sample stays on its pad. <span class="item">BOUNCED, TRACK KEPT</span> means the pattern was too large for the undo, so the track was left as it is. A bounce of everything you hear leaves the pattern unchanged.</p>
+      <p><b>Stop:</b> press <kbd>EXIT</kbd> to stop a bounce. Stopping the pattern, selecting another pattern or turning <kbd>REC</kbd> on stops it too; the screen shows <span class="item">BOUNCE STOPPED</span> and no pad is written.</p>
+      <p><b>A mono sample</b> bounces as a mono sample, so the new pad starts exactly when the track did.</p>
+    </div>
+  </section>
+
+  <section class="part" id="instruments">
+    <h2>Instruments and Kits</h2>
+    <p class="sub">DOOM OS has 20 built-in instruments, from drums to synths, and 11 drum kits. An instrument is loaded onto a pad and plays like a sample on every screen of the SP-404MKII. DOOM OS also saves the instrument's sound to the pad as a sample, so the pad plays in the stock firmware too.</p>
+    <h3>Instrument Browser</h3>
+    <ol class="first">
+      <li><span>On the step grid, hold <kbd>SUB PAD</kbd>, tap an empty pad (one that does not light up), and release <kbd>SUB PAD</kbd>. The instrument browser opens, with <span class="item">INSTRUMENTS</span> and <span class="item">KITS</span> as tabs at the top.</span></li>
+      <li><span>Turn <kbd>VALUE</kbd> to select an instrument.</span></li>
+      <li><span>Press <kbd>VALUE</kbd>. The instrument is loaded onto the pad, and the instrument editor opens.</span></li>
+    </ol>
+    <p class="sub">Press <kbd>EXIT</kbd> in the browser to return to the grid without loading an instrument.</p>
+    <figure class="panels">
+      <img src="img/doomos-instrument-browser.png" width="1040" height="490" alt="The instrument browser: the INSTRUMENTS and KITS tabs at the top with the position in the list, the selected instrument, FM, named in large letters with its description, TWO OPERATORS, and its picture on the left.">
+    </figure>
+    <h3>Instrument Editor</h3>
+    <p class="sub">The instrument editor sets the instrument's parameters, section by section. To open it for an existing instrument, select its track on the grid and press <kbd>START/END</kbd>. <kbd>START/END</kbd> lights when the selected track is an instrument track.</p>
+    <ol class="first">
+      <li><span>Turn <kbd>VALUE</kbd> to select a section of the sound, for example <span class="item">TONE</span>, <span class="item">MOD</span>, <span class="item">AMP</span> or <span class="item">OUT</span>.</span></li>
+      <li><span>Turn <kbd>CTRL 1</kbd> to <kbd>CTRL 3</kbd> to set the section's parameters. Hold <kbd>SHIFT</kbd> while you turn for finer steps.</span></li>
+      <li><span>Hold <kbd>SUB PAD</kbd> to hear the pad.</span></li>
+      <li><span>Press <kbd>EXIT</kbd>. DOOM OS saves the sound to the pad and returns to the grid.</span></li>
+    </ol>
+    <p class="sub">In the editor, the pads show the track's steps; tap a pad to turn a step on or off. Blue pads are steps with their own parameter values (see <a href="#plocks">Parameter Locks</a>).</p>
+    <p class="sub">To replace the instrument, press <kbd>REMAIN</kbd> in the editor. The browser opens at the current instrument. Turn <kbd>VALUE</kbd> to another instrument and press <kbd>VALUE</kbd>. The question names the current instrument, for example <span class="item">REPLACE KICK</span>: turn <kbd>VALUE</kbd> to <span class="item">YES</span> and press <kbd>VALUE</kbd>. The notes stay on the track and play the new instrument at its default parameters. Press <kbd>EXIT</kbd> to return to the editor without changes.</p>
+    <p class="sub">To remove an instrument from its pad, delete the pad's sample on the SP-404MKII's own screens: press <kbd>EXIT</kbd> to leave DOOM OS, hold <kbd>DEL</kbd>, press the pad, and press <kbd>VALUE</kbd>. This deletes the instrument's sound from the pad and cannot be undone. The pad is empty again, so hold <kbd>SUB PAD</kbd> and tap it to open the instrument browser. The notes stay on the track; to delete them, press <kbd>DEL</kbd> on the grid.</p>
+    <figure class="panels">
+      <img src="img/doomos-instruments.gif" width="1040" height="560" alt="START/END opens the FM track's instrument editor; SHIFT + pad 4 turns CHROMATIC on; VALUE selects the MOD section; REMAIN opens the browser at FM, a turn selects Wave, and SHIFT with a turn selects the kits; EXIT returns to the editor unchanged.">
+    </figure>
+    <h3>Chromatic Mode</h3>
+    <p class="sub">Chromatic mode plays the instrument from the pads at different pitches while you edit it.</p>
+    <p class="sub">In the instrument editor, hold <kbd>SHIFT</kbd> and press <kbd>pad 4</kbd>; the screen shows <span class="item">CHROMATIC ON</span>. The pads are laid out as in the SP-404MKII's <span class="item">CHROMATIC MODE</span>: pad 5 plays the instrument's original pitch, and the pitch rises one semitone per pad, from left to right in each row and from the bottom row to the top. A note sounds while you hold its pad. Nothing is recorded, and the knobs still edit the sound.</p>
+    <p class="sub">Press a <kbd>BANK</kbd> button to select the octave: <kbd>C/H</kbd> is the instrument's own octave, <kbd>B/G</kbd> and <kbd>A/F</kbd> are one and two octaves down, and <kbd>D/I</kbd> and <kbd>E/J</kbd> one and two octaves up. The selected octave's button lights. An instrument plays up to two octaves above or below its original pitch, so in the lowest and highest octaves about half of the pads stay dark and silent. Hold <kbd>SHIFT</kbd> and press <kbd>pad 4</kbd> again to turn chromatic mode off; leaving the editor also turns it off.</p>
+    <h3>Drum Kits</h3>
+    <p class="sub">A drum kit loads a set of drum sounds into a bank, one sound per pad.</p>
+    <ol class="first">
+      <li><span>Open the instrument browser. Hold <kbd>SHIFT</kbd> and turn <kbd>VALUE</kbd> to switch to <span class="item">KITS</span>, then turn <kbd>VALUE</kbd> to select a kit.</span></li>
+      <li><span>Press <kbd>VALUE</kbd>, then press a <kbd>BANK</kbd> button to select the bank for the kit.</span></li>
+      <li><span>Press <kbd>VALUE</kbd>. The kit loads into the bank's pads: 16 pads for most kits, 13 to 15 for the 606, CR78, 707 and 727 kits.</span></li>
+    </ol>
+    <div class="facts">
+      <p><b>Loading into a bank that holds samples:</b> DOOM OS asks first (<span class="item">OVERWRITE BANK A</span>). <span class="item">YES</span> deletes every sample in the bank, including the pads the kit leaves empty, and loads the kit; this cannot be undone. <span class="item">NO</span> leaves the bank unchanged.</p>
+      <p><b>Protected banks:</b> a protected bank cannot be loaded; the screen shows <span class="item">BANK PROTECTED</span>.</p>
+      <p><b>Knob response:</b> the SP-404MKII's <span class="item">Edit Knob Mode</span> setting (<kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SYSTEM</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">GENERAL</span>, on the SP-404MKII's own screens) sets whether a knob changes a parameter at once or only after it passes the current value.</p>
+    </div>
+  </section>
+
+  <section class="part" id="plocks">
+    <h2>Parameter Locks</h2>
+    <p class="sub">Set instrument parameters independently for each step: tune a kick differently on every beat, or lengthen the decay on one step only. Parameter locks work on instrument tracks, whose pad holds a DOOM OS instrument.</p>
+    <ol class="first">
+      <li><span>On the step grid, select an instrument track and press <kbd>MARK</kbd>, or press <kbd>MARK</kbd> in the instrument editor.</span></li>
+      <li><span>Tap a step that holds a note and set its parameters. Do the same for as many steps as you like.</span></li>
+      <li><span>Press <kbd>MARK</kbd> to save the changes with the project. Steps with parameter locks have blue pads. To discard the changes instead, press <kbd>EXIT</kbd>.</span></li>
+    </ol>
+    <figure class="panels">
+      <img src="img/doomos-plocks.gif" width="1040" height="560" alt="MARK on the FM track B3 opens its parameter locks with TAP A STEP in the header; a tapped step, STEP 6, shows the instrument's parameters for that step; EXIT returns to the grid and discards the changes.">
+    </figure>
+    <p class="sub">Press <kbd>DEL</kbd> to reset the selected step to the instrument's parameters. To start on a particular step, hold its pad when you press <kbd>MARK</kbd> on the grid.</p>
+    <div class="facts">
+      <p><b>Only what you change is locked:</b> a step keeps the parameters you set on it. Its other parameters follow the instrument, so later changes to the instrument's sound still reach them.</p>
+      <p><b>A lock belongs to its note:</b> when the note moves to another step, its parameter lock moves with it -- with the <span class="item">SHIFT</span> tool of the <a href="#tools">Pattern Tools</a>, and with the stock <span class="item">QUANTIZE</span>, <span class="item">DUPLICATE</span> and <span class="item">CROP</span>. <span class="item">SWAP PAD</span>, <kbd>COPY</kbd> and <span class="item">PASTE</span> of a track keep the locks with its notes within a project, and an undo brings a deleted note back with its lock. When <span class="item">QUANT</span> puts two notes of a track on one step, the louder one stays, with the lock of the other if it has none of its own. A copied pattern keeps the locks of the original in the same project, also with the stock <span class="item">COPY</span> and <span class="item">EXCHANGE</span>; a pattern or a track copied to another project arrives without them. When you change the locks of one copy, the other keeps its own.</p>
+      <p><b>Playback:</b> parameter locks play when the pattern plays the note, not when you strike the pad by hand. The stock firmware plays the instrument's own sound on every step, without the locks.</p>
+      <p><b>Limits:</b> a project holds up to 4096 parameter locks, and one editing session changes up to 64 steps. Past that, the screen shows <span class="item">STEPS FULL</span>, and <span class="item">SWAP PAD</span> and <span class="item">PASTE</span> move the notes without their locks. One track holds up to 126 locks in a pattern; a lock past that stays on its step and does not move with its note.</p>
+    </div>
+  </section>
+
+  <section class="part" id="arp">
+    <h2>Arpeggiator</h2>
+    <p class="sub">The arpeggiator plays the notes you hold one after another, in time with the tempo. On the ARP screen, the pads are a keyboard for the selected track's sound, in the key and scale you select.</p>
+    <ol class="first">
+      <li><span>On the step grid, turn <kbd>VALUE</kbd> to select a track.</span></li>
+      <li><span>Press <kbd>RECORD SETTING</kbd>, turn <kbd>VALUE</kbd> to <span class="item">ARP</span> and press <kbd>VALUE</kbd>. The ARP screen opens.</span></li>
+      <li><span>Hold one or more pads. The arpeggiator plays the held notes. The pads are laid out as in the SP-404MKII's <span class="item">CHROMATIC MODE</span>: the key's root note is on pad 5, and the notes of the scale rise from left to right in each row and from the bottom row to the top. Pads outside the sound's range stay dark.</span></li>
+      <li><span>Press <kbd>VALUE</kbd> to turn the arpeggiator off and play the pads as a keyboard. Press <kbd>VALUE</kbd> again to turn it on.</span></li>
+      <li><span>Press <kbd>HOLD</kbd> to keep the arpeggio playing after you release the pads; <kbd>HOLD</kbd> blinks. Once you have released all pads, the next pads you press start a new arpeggio.</span></li>
+      <li><span>Press <kbd>EXIT</kbd> to return to the grid. A held arpeggio keeps playing.</span></li>
+    </ol>
+    <figure class="panels">
+      <img src="img/doomos-arp.gif" width="1040" height="560" alt="ARP opened from the TRACK page on the FM track: the PLAY page with TYPE UP and RATE 1/16; three pads held light their keys on the keyboard; VALUE turns to the PITCH page with KEY C, SCALE MAJ and OCT 0, and back; EXIT returns to the grid.">
+    </figure>
+    <p class="sub">Turn <kbd>VALUE</kbd> to switch between the PLAY and PITCH pages. Hold <kbd>SHIFT</kbd> while you turn a knob for finer steps.</p>
+    <table class="knobs">
+      <tr><th><kbd>CTRL 1</kbd></th><td><span class="item">TYPE</span> on the PLAY page, <span class="item">KEY</span> on the PITCH page<small>TYPE: UP, DOWN, U/D (up and down), RND (random), ORD (the order you pressed the pads), CHRD (all notes together), CONV (from the outside in), DIV (from the middle out), PNKY (each note followed by the highest), THMB (the lowest followed by each note) or U/D+ (up and down, the highest and lowest notes played twice). KEY: C to B</small></td></tr>
+      <tr><th><kbd>CTRL 2</kbd></th><td><span class="item">RATE</span> / <span class="item">SCALE</span><small>RATE: 1/4 to 1/32, with triplets. SCALE: 40 scales, among them CHR (chromatic), MAJ, MIN and DOR</small></td></tr>
+      <tr><th><kbd>CTRL 3</kbd></th><td><span class="item">GATE</span> / <span class="item">OCT</span><small>GATE: the length of each note, 1 to 100%. OCT: the held notes repeated up to three octaves up or down</small></td></tr>
+    </table>
+    <h3>PRINT ARP</h3>
+    <p class="sub"><span class="item">PRINT ARP...</span> writes the arpeggio into the selected track as notes.</p>
+    <ol class="first">
+      <li><span>With the arpeggio playing, press <kbd>RECORD SETTING</kbd>.</span></li>
+      <li><span>Turn <kbd>VALUE</kbd> to <span class="item">GENERATE</span> and press <kbd>VALUE</kbd>, then press <kbd>VALUE</kbd> on <span class="item">PRINT ARP...</span>.</span></li>
+      <li><span>The question names the selected track, for example <span class="item">PRINT ARP TO TRACK A5</span>. Turn <kbd>VALUE</kbd> to <span class="item">YES</span> and press <kbd>VALUE</kbd>.</span></li>
+    </ol>
+    <div class="facts">
+      <p><b>Printing replaces every note on the track</b> over the whole pattern, and turns <kbd>HOLD</kbd> off. Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd> to undo it, unless the screen shows <span class="item">ARP PRINTED, NO UNDO</span>. With no notes held, the screen shows <span class="item">NO ARP</span>.</p>
+      <p><b>Clear the track:</b> press <kbd>DEL</kbd> on the ARP screen, or select <span class="item">CLEAR...</span> under <span class="item">GENERATE</span>. After a confirmation (<span class="item">CLEAR TRACK A5</span>), every note on the track is deleted.</p>
+      <p><b>Settings:</b> the arpeggiator's settings are kept until you switch off the SP-404MKII. Loading another project stops a held arpeggio.</p>
+      <p><b>Instrument editor:</b> on an instrument track, press <kbd>START/END</kbd> to open the instrument editor; press <kbd>EXIT</kbd> to return to ARP.</p>
     </div>
   </section>
 
   <section class="part" id="tools">
-    <h2>Pattern tools</h2>
-    <p class="sub"><kbd>PATTERN EDIT</kbd> shows eight tools. Turn <kbd>VALUE</kbd> to pick one and press it to open it, then turn to choose and press to apply; <kbd>EXIT</kbd> leaves it as it was. Tap a track's pad first to work on that track only. <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN EDIT</kbd> opens the settings for new notes.</p>
+    <h2>Pattern Tools</h2>
+    <p class="sub">The pattern tools edit all notes of the pattern, or of one track, in one step.</p>
+    <ol class="first">
+      <li><span>Press <kbd>PATTERN EDIT</kbd> to open the pattern tools. The top right shows <span class="item">ALL</span>: the tools work on every track.</span></li>
+      <li><span>To work on one track only, tap that track's pad. Tap it again to return to <span class="item">ALL</span>.</span></li>
+      <li><span>Turn <kbd>VALUE</kbd> to select a tool, and press <kbd>VALUE</kbd> to open it.</span></li>
+      <li><span>Turn <kbd>VALUE</kbd> to set the amount, and press <kbd>VALUE</kbd> to apply it. The grid returns. Press <kbd>EXIT</kbd> instead to cancel.</span></li>
+    </ol>
+    <table class="knobs">
+      <tr><th><span class="item">QUANT</span></th><td>Quantize notes to a grid<small>1/4, 1/4T, 1/8, 1/8T, 1/16, 1/16T or 1/32</small></td></tr>
+      <tr><th><span class="item">SWING</span></th><td>Swing, 50 (straight) to 75<small>hold <kbd>SHIFT</kbd> and turn <kbd>VALUE</kbd> to swing 16th or 8th notes</small></td></tr>
+      <tr><th><span class="item">SHIFT</span></th><td>Move notes by whole steps, &minus;16 to +16<small>notes moved past the end wrap round to the start</small></td></tr>
+      <tr><th><span class="item">DOUBLE</span></th><td>Double the pattern length, repeating its notes and effect movements<small>applied at once; always the whole pattern</small></td></tr>
+      <tr><th><span class="item">HALVE</span></th><td>Halve the pattern length; the second half is deleted<small>applied at once; always the whole pattern</small></td></tr>
+      <tr><th><span class="item">REVERSE</span></th><td>Reverse the notes: the first step becomes the last<small>applied at once</small></td></tr>
+      <tr><th><span class="item">HUMAN</span></th><td>Vary the timing and velocity of every note at random, 1 to 30</td></tr>
+      <tr><th><span class="item">TRANSP</span></th><td>Transpose notes, &minus;12 to +12 semitones</td></tr>
+    </table>
     <figure class="panels">
-      <img src="img/doomos-pattern-tools.gif" width="1040" height="560" alt="PATTERN EDIT opens the tools; VALUE opens QUANT, EXIT closes it; a turn selects SWING and VALUE opens it; PATTERN EDIT goes back to the grid; SHIFT + PATTERN EDIT opens NEW NOTES.">
+      <img src="img/doomos-pattern-tools.gif" width="1040" height="560" alt="PATTERN EDIT opens the pattern tools; VALUE opens QUANT, EXIT cancels it; a turn selects SWING and VALUE opens it; PATTERN EDIT returns to the grid; SHIFT + PATTERN EDIT opens NEW NOTES.">
     </figure>
+    <div class="facts">
+      <p><b>Undo:</b> each tool is one undo step. Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd> to undo it.</p>
+      <p><b>Limits:</b> DOUBLE is not possible past 64 bars or 512 notes, and HALVE not on a one-bar pattern; the screen shows <span class="item">NOT POSSIBLE</span>.</p>
+      <p><b>NEW NOTES:</b> <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN EDIT</kbd> opens the settings for recorded notes (see <a href="#rec">Recording</a>).</p>
+    </div>
   </section>
 
   <section class="part" id="mix">
     <h2>Mixer</h2>
-    <p class="sub">In the track panel, turn <kbd>VALUE</kbd> to MIXER and press it. Turn <kbd>VALUE</kbd> to select a track.</p>
+    <p class="sub">The mixer shows every track of the pattern as a channel strip, with its pan, bus and level.</p>
+    <p class="sub">To open the mixer, hold <kbd>RECORD SETTING</kbd> for 0.6 seconds, or press <kbd>RECORD SETTING</kbd>, turn <kbd>VALUE</kbd> to <span class="item">MIXER</span> and press <kbd>VALUE</kbd>. Turn <kbd>VALUE</kbd> to select a track, then set its pan, bus and level:</p>
     <div class="tabs">
       <!-- a radio and its label per tab, then one .tab per label, in the same order -->
       <input type="radio" name="mix" id="mix-1" checked>
@@ -325,35 +537,174 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <input type="radio" name="mix" id="mix-2">
       <label for="mix-2">VALUE</label>
       <div class="tab">
-        <p class="how"><kbd>CTRL 1</kbd> pan, <kbd>CTRL 2</kbd> bus, <kbd>CTRL 3</kbd> level.</p>
-        <img src="img/doomos-mixer-ctrl.gif" width="1040" height="680" alt="The three CTRL knobs above the screen. The track panel's MIXER opens with VALUE and VALUE selects A6; CTRL 1 turns its pan to the left, CTRL 2 sets its bus to B2 and CTRL 3 raises its level from 83 to 115.">
+        <p class="how"><kbd>CTRL 1</kbd> sets the pan, <kbd>CTRL 2</kbd> the bus (B1, B2 or DRY) and <kbd>CTRL 3</kbd> the level. A knob sets the value at its position at once.</p>
       </div>
       <div class="tab">
-        <p class="how">Press <kbd>VALUE</kbd> for pan, bus or level, and turn it a step at a time.</p>
-        <img src="img/doomos-mixer-value.gif" width="1040" height="560" alt="In the mixer, VALUE selects A6; its presses pick pan, bus and level in turn and its turns change each; SHIFT + RECORD SETTING shows the levels dithered.">
+        <p class="how">Press <kbd>VALUE</kbd> to select pan, bus or level in turn, and turn <kbd>VALUE</kbd> to change the value one step at a time. Press <kbd>EXIT</kbd> to deselect it.</p>
       </div>
+    </div>
+    <figure class="panels">
+      <img src="img/doomos-mixer.gif" width="1040" height="560" alt="Holding RECORD SETTING opens the mixer; VALUE selects A2, its name above the strip; presses of VALUE select pan, bus and level in turn, and the next press deselects; SHIFT + RECORD SETTING shows the levels dithered.">
+    </figure>
+    <div class="facts">
+      <p><b>Saving:</b> pan, bus and level are the pads' own settings, so the SP-404MKII plays them everywhere. They are saved with the project when you leave the mixer. Setting the pan of a pad set to MONO turns MONO off.</p>
+      <p><b>Display style:</b> press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd> to select <span class="item">ARROWS</span>, <span class="item">DITHER</span>, <span class="item">ARROWS + NAMES</span> or <span class="item">DITHER + NAMES</span>. With NAMES, the selected strip's full name appears above it for two seconds when you select another strip.</p>
+      <p><b>Mute and solo:</b> hold <kbd>SHIFT</kbd> and press <kbd>VALUE</kbd> to mute or unmute the selected track; press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd> to play it solo. In the mixer, tap a pad to mute or unmute it, as with <kbd>SHIFT</kbd><span class="plus">+</span><kbd>REVERSE</kbd> on the SP-404MKII: a muted pad lights red, a track of the pattern white, another pad with a sample dim white, and the <kbd>BANK</kbd> buttons select the bank. Hold <kbd>SHIFT</kbd> and press a track's pad to play that track solo, and again to turn solo off; <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 9</kbd> and <kbd>pad 16</kbd> stay the metronome and the bus effects. Press <kbd>EXIT</kbd> to return to the grid.</p>
+    </div>
+  </section>
+
+  <section class="part" id="eq">
+    <h2>EQ</h2>
+    <p class="sub">Every pad can have its own 3-band EQ: <span class="item">LOW</span>, <span class="item">MID</span> and <span class="item">HIGH</span>. You set it in the mixer, and its curve shows above the mixer's strips.</p>
+    <ol class="first">
+      <li><span>In the mixer, press <kbd>PITCH/SPEED</kbd> to show the EQ display: the selected track's pad and its EQ curve. Turn <kbd>VALUE</kbd> to select another track.</span></li>
+      <li><span>Turn <kbd>CTRL 1</kbd>, <kbd>CTRL 2</kbd> and <kbd>CTRL 3</kbd> to set the gain of <span class="item">LOW</span>, <span class="item">MID</span> and <span class="item">HIGH</span>. The first turn opens the EQ screen of the selected track's pad; <kbd>VALUE</kbd> opens it without changing a band.</span></li>
+      <li><span>Press <kbd>VALUE</kbd> to show <span class="item">ADV</span>: turn <kbd>VALUE</kbd> to select <span class="item">LOW</span>, <span class="item">MID</span> or <span class="item">HIGH</span>, and set the band with <kbd>CTRL 1</kbd> to <kbd>CTRL 3</kbd>. Press <kbd>VALUE</kbd> again to hide <span class="item">ADV</span>.</span></li>
+      <li><span>Press <kbd>EXIT</kbd> to return to the EQ display, and again to hide it.</span></li>
+    </ol>
+    <figure class="panels">
+      <img src="img/doomos-eq.gif" width="1040" height="560" alt="In the mixer, PITCH/SPEED shows the EQ display of the selected track; VALUE opens its EQ screen; CTRL 1 raises LOW and CTRL 3 raises HIGH; VALUE shows ADV, a turn of VALUE selects MID, and CTRL 1 and CTRL 2 set its gain and frequency; EXIT returns to the EQ display with the curve, and EXIT again hides it.">
+    </figure>
+    <table class="knobs">
+      <tr><th><kbd>CTRL 1</kbd></th><td><span class="item">GAIN</span><small>-12 to +12 dB</small></td></tr>
+      <tr><th><kbd>CTRL 2</kbd></th><td><span class="item">FREQ</span><small>20 Hz to 20 kHz; LOW starts at 100 Hz, MID at 1.2 kHz, HIGH at 8.0 kHz</small></td></tr>
+      <tr><th><kbd>CTRL 3</kbd></th><td><span class="item">Q</span><small>0.3 to 10: the width of MID, the slope of LOW and HIGH</small></td></tr>
+    </table>
+    <div class="facts">
+      <p><b>Fine steps:</b> hold <kbd>SHIFT</kbd> while you turn a CTRL knob.</p>
+      <p><b>Sixteen pads:</b> up to sixteen pads can have an EQ at a time. A pad with all three gains at 0 dB has none. When sixteen pads have one, the gain of a seventeenth pad stays at 0 and the screen shows <span class="item">EQ: 16 PADS</span>.</p>
+      <p><b>The pad's EQ:</b> the EQ belongs to the pad, so you hear it in every pattern and on every screen that plays the pad, the SP-404MKII's own screens included. It works on samples and instruments. The mixer's meters and the waveform display show the sound before the EQ.</p>
+      <p><b>Saving:</b> each project keeps its own EQ. It is saved when you hide the EQ display or leave the mixer. A project's EXPORT and BACKUP do not include the EQ yet: after IMPORT or RESTORE, the project's EQ is flat.</p>
+    </div>
+  </section>
+
+  <section class="part" id="wave">
+    <h2>Waveform Display</h2>
+    <p class="sub">The waveform display shows the last two seconds of audio across the top of the grid or the mixer, with the newest audio on the right.</p>
+    <ol class="first">
+      <li><span>Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>START/END</kbd> to show the waveform of the output (<span class="item">OUT</span>).</span></li>
+      <li><span>Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>START/END</kbd> again to show the selected track's waveform. The track's pad and name appear on the tab. Turn <kbd>VALUE</kbd> to select another track; the display follows it.</span></li>
+      <li><span>Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>START/END</kbd> a third time to hide the waveform display.</span></li>
+    </ol>
+    <figure class="panels">
+      <img src="img/doomos-wave.gif" width="1040" height="560" alt="With the pattern playing, SHIFT + START/END shows the output's waveform over the grid; a second press shows the selected track, B3 FM; a third press hides it.">
+    </figure>
+    <div class="facts">
+      <p><b>Layout:</b> the grid moves down under the waveform display, and the mixer's strips get shorter. The display stays open when you switch between the grid and the mixer.</p>
+      <p><b>Signal:</b> <span class="item">OUT</span> is the mix before the effects. A track shows its pad's audio at the track's level, before pan and the effects; a muted track shows a flat line. When you select another track, its waveform starts again from the right.</p>
+    </div>
+  </section>
+
+  <section class="part" id="fx">
+    <h2>Effects</h2>
+    <p class="sub">The FX buttons work as on the stock SP-404MKII, except that the effect's page stays open until you close it.</p>
+    <ol class="first">
+      <li><span>Press an FX button to turn the effect on and open its page.</span></li>
+      <li><span>Turn <kbd>CTRL 1</kbd> to <kbd>CTRL 3</kbd> to set its parameters. Hold <kbd>VALUE</kbd> to show the second page of parameters.</span></li>
+      <li><span>Press <kbd>EXIT</kbd> to close the page. The effect stays on, and the settings on both pages are kept.</span></li>
+      <li><span>Press the FX button again to turn the effect off.</span></li>
+    </ol>
+    <figure class="panels">
+      <img src="img/doomos-effects.gif" width="1040" height="560" alt="With the pattern playing, the first FX button turns Filter+Drive on and opens its page with CUTOFF, RESONANCE and DRIVE; with VALUE held, the second page appears; EXIT closes the page while the effect stays on.">
+    </figure>
+    <div class="facts">
+      <p><b>Reopen a page:</b> hold <kbd>REMAIN</kbd> and press <kbd>FILTER+DRIVE</kbd> to <kbd>DJFX LOOPER</kbd> to open the page of an effect that is on, without turning it off. This works for the effects on the bus that <kbd>BUS FX</kbd> has selected.</p>
+      <p><b>Bus effects:</b> <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 16</kbd> opens the SP-404MKII's bus effects settings. Press <kbd>EXIT</kbd> to return to DOOM OS; the pattern keeps playing. While <kbd>REC</kbd> is on, the screen shows <span class="item">NOT POSSIBLE</span>.</p>
+      <p><b>Record effect movements:</b> with an effect's page open, press <kbd>REC</kbd> twice and turn the knobs. The movements are recorded into the pattern (see <a href="#auto">FX Automation</a>).</p>
+    </div>
+  </section>
+
+  <section class="part" id="sidechain">
+    <h2>Side Chain</h2>
+    <p class="sub">The side chain turns one bus down while another bus plays, for example the bass while the kick hits. The SIDECHAIN screen shows the SP-404MKII's side chain on a picture of the buses: <span class="item">D</span> (DRY) and <span class="item">BUS 1</span> to <span class="item">BUS 4</span> into the output, routed as the SP-404MKII routes them.</p>
+    <ol class="first">
+      <li><span>Press <kbd>RECORD SETTING</kbd>, turn <kbd>VALUE</kbd> to <span class="item">SIDECHAIN</span> and press <kbd>VALUE</kbd>. The SIDECHAIN screen opens.</span></li>
+      <li><span>Turn <kbd>VALUE</kbd> to the bus that controls the side chain, the source, and press <kbd>VALUE</kbd>.</span></li>
+      <li><span>Turn <kbd>VALUE</kbd> to the bus that is turned down, the target, and press <kbd>VALUE</kbd>. Press <kbd>VALUE</kbd> twice on the same bus to compress that bus.</span></li>
+      <li><span>Turn <kbd>CTRL 1</kbd>, <kbd>CTRL 2</kbd> and <kbd>CTRL 3</kbd> to set the side chain. While you turn, the screen shows how far the target is turned down.</span></li>
+      <li><span>Press <kbd>EXIT</kbd> to return to the grid. The settings are saved.</span></li>
+    </ol>
+    <figure class="panels">
+      <img src="img/doomos-sidechain.gif" width="1040" height="560" alt="SIDECHAIN opened from the TRACK page shows D and BUS 1 to BUS 4 as the SP-404MKII routes them, the side chain OFF; VALUE pressed on BUS 1 asks PICK TARGET; pressed on BUS 2 it sets BUS1 &gt; BUS2; with the pattern playing, SHIFT + RECORD SETTING shows how far BUS 2 is turned down; EXIT returns to the grid.">
+    </figure>
+    <table class="knobs">
+      <tr><th><kbd>CTRL 1</kbd></th><td><span class="item">THR</span>, THRESHOLD<small>how loud the source must be before the target is turned down</small></td></tr>
+      <tr><th><kbd>CTRL 2</kbd></th><td><span class="item">RAT</span>, RATIO<small>how far the target is turned down; the highest values silence it</small></td></tr>
+      <tr><th><kbd>CTRL 3</kbd></th><td><span class="item">REL</span>, RELEASE<small>how fast the target comes back</small></td></tr>
+    </table>
+    <div class="facts">
+      <p><b>GAIN:</b> turn <kbd>VALUE</kbd> to <span class="item">GAIN</span> and press <kbd>VALUE</kbd>, then turn <kbd>VALUE</kbd> to raise the target's level after the side chain, 0.0 to 6.0 dB. Press <kbd>VALUE</kbd> again to finish. <span class="item">THR</span>, <span class="item">RAT</span> and <span class="item">REL</span> can be edited the same way.</p>
+      <p><b>Turn the side chain off:</b> hold <kbd>DEL</kbd> and press <kbd>VALUE</kbd> on the source or the target bus.</p>
+      <p><b>Over time:</b> press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd> to show how far the target is turned down over the last moments; press it again for the picture of the buses.</p>
+      <p><b>The SP-404MKII's own setting:</b> the SIDECHAIN screen sets the same side chain as the <span class="item">SIDE CHAIN</span> tab of the bus effects settings (<kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 16</kbd>). It applies to every project.</p>
     </div>
   </section>
 
   <section class="part" id="auto">
-    <h2>Automation</h2>
-    <p class="sub"><kbd>SHIFT</kbd><span class="plus">+</span><kbd>MARK</kbd> shows the pattern's effect moves: a row for each effect, a column for each knob. Press <kbd>VALUE</kbd> to see one knob across the bar, tap a pad for a step and turn <kbd>VALUE</kbd> to change it. <kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd> goes to the next effect.</p>
+    <h2>FX Automation</h2>
+    <p class="sub">FX Automation shows the effect movements recorded in the pattern for the bus that <kbd>BUS FX</kbd> has selected: a row for each FX button and a column for each of its parameters.</p>
+    <ol class="first">
+      <li><span>Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>MARK</kbd> to open FX Automation.</span></li>
+      <li><span>Turn <kbd>VALUE</kbd> to select a parameter. Hold <kbd>SHIFT</kbd> and turn <kbd>VALUE</kbd> to select the next or previous effect.</span></li>
+      <li><span>Press <kbd>VALUE</kbd> to show the parameter's value on each step of the bar.</span></li>
+      <li><span>Tap a pad to select a step, and turn <kbd>VALUE</kbd> to change its value.</span></li>
+      <li><span>Press <kbd>VALUE</kbd> to return to the overview. Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>MARK</kbd> to return to the grid.</span></li>
+    </ol>
     <figure class="panels">
-      <img src="img/doomos-automation.gif" width="1040" height="560" alt="SHIFT + MARK opens the matrix; VALUE opens the isolator's LOW knob across the bar; a pad selects a step; VALUE goes back; SHIFT + a turn moves to the next effect; SHIFT + MARK goes back to the grid.">
+      <img src="img/doomos-automation.gif" width="1040" height="560" alt="SHIFT + MARK opens the overview; VALUE shows the isolator's LOW parameter on each step of the bar; a pad selects a step; VALUE returns to the overview; SHIFT + a turn selects the next effect; SHIFT + MARK returns to the grid.">
     </figure>
+    <div class="facts">
+      <p><b>EFX MOTION PLAY:</b> press <kbd>START/END</kbd> to turn the SP-404MKII's <span class="item">EFX MOTION PLAY</span> on or off; the recorded movements play only while it is on, and <kbd>START/END</kbd> lights. An edit turns it on. Turning it off also turns off the effects of both buses.</p>
+      <p><b>On a step:</b> in the one-parameter view, the row's own FX button turns the effect on or off at the selected step.</p>
+    </div>
   </section>
 
   <section class="part" id="help">
-    <h2>Help</h2>
-    <p class="sub">Hold <kbd>SHIFT</kbd> for three seconds. Then press any button, pad or knob to see what it does; nothing plays or changes. <kbd>EXIT</kbd> leaves help.</p>
+    <h2>Help Mode</h2>
+    <p class="sub">Help mode shows what each control does on the current DOOM OS screen.</p>
+    <ol class="first">
+      <li><span>Hold <kbd>SHIFT</kbd> alone for three seconds to turn help mode on.</span></li>
+      <li><span>Press any button or pad, or turn <kbd>VALUE</kbd> or a CTRL knob, to see its functions. Nothing plays or changes. A control without a function on the current screen shows <span class="item">NO FUNCTION</span>.</span></li>
+      <li><span>Press <kbd>EXIT</kbd>, or hold <kbd>SHIFT</kbd> for three seconds again, to leave help mode.</span></li>
+    </ol>
     <figure class="panels">
-      <img src="img/doomos-help.png" width="1040" height="490" alt="SHIFT held for three seconds, and the help screen it opens: press any button or pad, turn VALUE or CTRL 1 to 3, and see what it does here; nothing is changed.">
+      <img src="img/doomos-help.png" width="1040" height="490" alt="SHIFT held for three seconds opens help mode: press any button or pad, or turn VALUE or CTRL 1 to 3, to see what it does on this screen; nothing changes.">
     </figure>
   </section>
 
+  <section class="part" id="settings">
+    <h2>DOOM OS Settings</h2>
+    <p class="sub">The <span class="item">DOOM OS</span> tab of the SP-404MKII's <span class="item">SYSTEM</span> screen holds the settings of DOOM OS.</p>
+    <ol class="first">
+      <li><span>Press <kbd>EXIT</kbd> to leave DOOM OS.</span></li>
+      <li><span>Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> and select <span class="item">SYSTEM</span>.</span></li>
+      <li><span>Turn <kbd>CTRL 3</kbd> to select the <span class="item">DOOM OS</span> tab.</span></li>
+      <li><span>Select a setting and change its value, as on the SP-404MKII's own tabs.</span></li>
+      <li><span>Press <kbd>EXIT</kbd> to leave the page. The settings are saved.</span></li>
+    </ol>
+    <figure class="panels">
+      <img src="img/doomos-settings.png" width="1040" height="490" alt="The DOOM OS tab of the SYSTEM screen at its last rows: Pattern View, Grid Lines, Pattern Follow, Motion Rec, Hold to Exit and Boot to DOOM with their values.">
+    </figure>
+    <table class="knobs">
+      <tr><th><span class="item">Mixer Level</span></th><td>How the mixer shows a track's level: <span class="item">ARROWS</span> next to the fader, or <span class="item">DITHER</span>, a pattern inside it<small>default ARROWS</small></td></tr>
+      <tr><th><span class="item">Mixer Names</span></th><td><span class="item">ON</span>: when you select another strip, the mixer shows its name above it<small>default ON</small></td></tr>
+      <tr><th><span class="item">Boot Anim</span></th><td>The boot animation: <span class="item">GRAFFITI</span>, <span class="item">VHS</span>, <span class="item">HELLO</span>, <span class="item">BUBBLE</span>, <span class="item">SKETCH</span> or <span class="item">HYPERSPACE</span>, or <span class="item">RANDOM</span> for a different one at each start-up<small>default VHS</small></td></tr>
+      <tr><th><span class="item">Pattern View</span></th><td>The grid view: <span class="item">GRID</span>, eight tracks, or <span class="item">ZOOM</span>, four (see <a href="#views">Grid Views</a>)<small>default GRID</small></td></tr>
+      <tr><th><span class="item">Grid Lines</span></th><td>Guide lines on the grid: <span class="item">LABELS</span> between the track names and the steps, <span class="item">BEATS</span> between the beats, <span class="item">BOTH</span>, or <span class="item">OFF</span><small>default OFF</small></td></tr>
+      <tr><th><span class="item">Pattern Follow</span></th><td><span class="item">ON</span>: while a pattern plays, the grid follows the playhead from bar to bar. <span class="item">OFF</span>: the grid stays on the selected bar<small>default ON</small></td></tr>
+      <tr><th><span class="item">Motion Rec</span></th><td>How a recorded effect knob is written (see <a href="#auto">FX Automation</a>): <span class="item">OVERWRITE</span> replaces the movements already there, <span class="item">OVERDUB</span> adds to them<small>default OVERWRITE</small></td></tr>
+      <tr><th><span class="item">Hold to Exit</span></th><td>How long you hold <kbd>EXIT</kbd> to leave DOOM OS, from 0.1 to 1.0 seconds. DOOM OS closes as soon as you have held <kbd>EXIT</kbd> that long; a short press does not close it. <span class="item">OFF</span>: a press of <kbd>EXIT</kbd> closes DOOM OS<small>default OFF</small></td></tr>
+      <tr><th><span class="item">Boot to DOOM</span></th><td><span class="item">YES</span>: DOOM OS opens by itself when the SP-404MKII has started<small>default NO</small></td></tr>
+    </table>
+    <div class="facts">
+      <p><b>Changed in DOOM OS:</b> the grid view and its lines (<kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd> on the grid), the mixer's display style (<kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd> in the mixer) and Pattern Follow (<kbd>SHIFT</kbd><span class="plus">+</span><kbd>HOLD</kbd>) are also set in DOOM OS. These settings keep the last choice.</p>
+      <p><b>Custom shortcuts:</b> the <span class="item">SHORTCUT</span> tab, next to <span class="item">DOOM OS</span>, holds up to eight shortcuts of your own.</p>
+    </div>
+  </section>
+
   <section class="part" id="all">
-    <h2>All controls</h2>
-    <p class="sub">The full list. Most of it is also in the menus: press <kbd>RECORD SETTING</kbd> or <kbd>PATTERN EDIT</kbd> and turn <kbd>VALUE</kbd>. On the box, hold <kbd>SHIFT</kbd> for three seconds and press any button to see what it does.</p>
+    <h2>All Controls</h2>
+    <p class="sub">Every DOOM OS control, grouped by feature. Many of these functions are also in the menus: press <kbd>RECORD SETTING</kbd> or <kbd>PATTERN EDIT</kbd> and turn <kbd>VALUE</kbd>. To check a control on the SP-404MKII itself, use help mode: hold <kbd>SHIFT</kbd> for three seconds, then press the control.</p>
     <div class="groups">
     <!-- One row per control. The search reads the group, the row's own text and data-k,
          which holds only extra words to find the row by. -->
@@ -361,16 +712,20 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <h3>Basics</h3>
       <table>
         <tr data-k="start launch enter open"><th scope="row">Open DOOM OS</th><td>hold <kbd>REMAIN</kbd><span class="plus">+</span><kbd>SUB PAD</kbd></td></tr>
-        <tr data-k="quit leave close"><th scope="row">Close DOOM OS</th><td><kbd>EXIT</kbd></td></tr>
-        <tr data-k="save store keep write"><th scope="row">Save</th><td>nothing to press: saved when you open another pattern or press <kbd>EXIT</kbd></td></tr>
-        <tr data-k="help info card"><th scope="row">Help mode: what does this button do?</th><td>hold <kbd>SHIFT</kbd> 3 seconds, then press anything</td></tr>
-        <tr data-k="undo revert back mistake"><th scope="row">Undo</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd></td></tr>
+        <tr data-k="quit leave close"><th scope="row">Close DOOM OS</th><td><kbd>EXIT</kbd>; with <span class="item">Hold to Exit</span> set, hold <kbd>EXIT</kbd> that long</td></tr>
+        <tr data-k="boot startup power on automatic start"><th scope="row">Open DOOM OS at start-up</th><td><span class="item">Boot to DOOM</span> on the <span class="item">DOOM OS</span> settings tab: <span class="item">YES</span></td></tr>
+        <tr data-k="screensaver wake sleep"><th scope="row">Wake from the screensaver</th><td>any button or pad; the press does nothing else</td></tr>
+        <tr data-k="save store keep write"><th scope="row">Save</th><td>automatic: shortly after an edit, and when you open another pattern or press <kbd>EXIT</kbd></td></tr>
+        <tr data-k="help info card"><th scope="row">Help mode</th><td>hold <kbd>SHIFT</kbd> for 3 seconds, then press a control</td></tr>
+        <tr data-k="undo revert back mistake"><th scope="row">Undo, up to 11 steps</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd></td></tr>
         <tr data-k="redo"><th scope="row">Redo</th><td><kbd>REMAIN</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd></td></tr>
-        <tr data-k="play stop start transport"><th scope="row">Play / stop</th><td><kbd>PATTERN SELECT</kbd></td></tr>
-        <tr data-k="pattern switch load change"><th scope="row">Open another pattern</th><td>hold <kbd>PATTERN SELECT</kbd><span class="plus">+</span><kbd>pad</kbd></td></tr>
-        <tr data-k="new pattern create empty"><th scope="row">New pattern</th><td>hold <kbd>PATTERN SELECT</kbd> + an empty <kbd>pad</kbd></td></tr>
-        <tr data-k="pattern bank"><th scope="row">Pattern from another bank</th><td>hold <kbd>PATTERN SELECT</kbd><span class="plus">+</span><kbd>BANK</kbd></td></tr>
+        <tr data-k="play stop start transport"><th scope="row">Start / stop playback</th><td><kbd>PATTERN SELECT</kbd></td></tr>
+        <tr data-k="pattern switch load change queue next"><th scope="row">Open another pattern</th><td>hold <kbd>PATTERN SELECT</kbd><span class="plus">+</span><kbd>pad</kbd>; while a pattern plays, the new one starts when the playing one ends</td></tr>
+        <tr data-k="pattern switch change now immediately instant"><th scope="row">Switch to another pattern at once while playing</th><td>hold <kbd>PATTERN SELECT</kbd><span class="plus">+</span><kbd>SUB PAD</kbd><span class="plus">+</span><kbd>pad</kbd></td></tr>
+        <tr data-k="new pattern create empty"><th scope="row">New pattern</th><td>hold <kbd>PATTERN SELECT</kbd><span class="plus">+</span>an empty <kbd>pad</kbd></td></tr>
+        <tr data-k="pattern bank"><th scope="row">Pattern bank</th><td>hold <kbd>PATTERN SELECT</kbd><span class="plus">+</span><kbd>BANK</kbd></td></tr>
         <tr data-k="tempo bpm speed"><th scope="row">Tempo</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 11</kbd>, turn <kbd>VALUE</kbd>, press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="tempo bpm speed"><th scope="row">Tempo</th><td><kbd>RECORD SETTING</kbd> twice <span class="then" aria-label="then">&rsaquo;</span> <span class="item">BPM</span></td></tr>
       </table>
     </section>
     <section class="group" id="tracks">
@@ -378,20 +733,23 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <p class="gnote">A track is one pad in the pattern.</p>
       <table>
         <tr data-k="track select choose row"><th scope="row">Select a track</th><td>turn <kbd>VALUE</kbd></td></tr>
-        <tr data-k="add track sound sample new instrument"><th scope="row">Add a track / choose its sound</th><td>hold <kbd>SUB PAD</kbd>, tap pads, let go</td></tr>
-        <tr data-k="bank sample sound"><th scope="row">Sounds from another bank</th><td><kbd>BANK</kbd>, then hold <kbd>SUB PAD</kbd></td></tr>
+        <tr data-k="add track sound sample new instrument"><th scope="row">Add a track</th><td>hold <kbd>SUB PAD</kbd>, tap pads, release <kbd>SUB PAD</kbd></td></tr>
+        <tr data-k="synth drum engine sound instrument empty"><th scope="row">Add an instrument track</th><td>hold <kbd>SUB PAD</kbd><span class="plus">+</span>tap an empty <kbd>pad</kbd></td></tr>
+        <tr data-k="sample empty lit light pads"><th scope="row">Show the pads that hold a sample</th><td>hold <kbd>SUB PAD</kbd></td></tr>
+        <tr data-k="hear listen audition play track sound preview"><th scope="row">Hear the selected track</th><td>hold <kbd>SUB PAD</kbd>, in the mixer and wherever <kbd>SUB PAD</kbd> has no other use -- not on the grid, where it adds a track</td></tr>
+        <tr data-k="gate loop reverse sync bpm one shot ping pong sample setting"><th scope="row">The selected track's GATE, LOOP, REVERSE or BPM SYNC</th><td><kbd>GATE</kbd> <kbd>LOOP</kbd> <kbd>REVERSE</kbd> <kbd>BPM SYNC</kbd>, on a sample track; lit when on, LOOP blinking for a ping-pong loop</td></tr>
+        <tr data-k="bank sample sound"><th scope="row">Samples from another bank</th><td><kbd>BANK</kbd>, then hold <kbd>SUB PAD</kbd></td></tr>
         <tr data-k="velocity volume loud soft accent all track even flatten"><th scope="row">Same velocity for every note</th><td><kbd>CTRL 1</kbd></td></tr>
         <tr data-k="length gate duration long short all track"><th scope="row">Same length for every note</th><td><kbd>CTRL 2</kbd></td></tr>
         <tr data-k="nudge timing micro shift early late offset all track tighten quantise quantize"><th scope="row">Same nudge for every note</th><td><kbd>CTRL 3</kbd></td></tr>
-        <tr data-k="mute unmute silence"><th scope="row">Mute / unmute</th><td><kbd>SHIFT</kbd> + press <kbd>VALUE</kbd></td></tr>
-        <tr data-k="solo alone only isolate blink blinking"><th scope="row">Solo / solo off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd> &mdash; <kbd>ROLL</kbd> blinks while a track plays solo</td></tr>
-        <tr data-k="solo"><th scope="row">Solo</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SOLO</span></td></tr>
-        <tr data-k="volume level gain"><th scope="row">Track volume</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">VOLUME</span></td></tr>
-        <tr data-k="copy"><th scope="row">Copy the track</th><td><kbd>COPY</kbd></td></tr>
-        <tr data-k="paste"><th scope="row">Paste onto the track</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">ACTIONS</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">PASTE</span></td></tr>
-        <tr data-k="swap replace sound sample pad"><th scope="row">Swap the sound, keep the notes</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">ACTIONS</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SWAP PAD</span></td></tr>
-        <tr data-k="clear erase empty"><th scope="row">Clear all notes</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">ACTIONS</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">CLEAR...</span></td></tr>
-        <tr data-k="delete remove track"><th scope="row">Delete the track</th><td><kbd>DEL</kbd></td></tr>
+        <tr data-k="mute unmute silence"><th scope="row">Mute / unmute</th><td><kbd>SHIFT</kbd><span class="plus">+</span>press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="solo alone only isolate blink blinking"><th scope="row">Solo on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd> &mdash; <kbd>ROLL</kbd> blinks while a track plays solo</td></tr>
+        <tr data-k="copy"><th scope="row">Copy the track's notes</th><td><kbd>COPY</kbd></td></tr>
+        <tr data-k="paste"><th scope="row">Paste onto the track</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">EDIT</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">PASTE</span></td></tr>
+        <tr data-k="swap replace sound sample pad"><th scope="row">Swap pad: the notes to another pad</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">EDIT</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SWAP PAD</span></td></tr>
+        <tr data-k="clear erase empty"><th scope="row">Clear the track's notes</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">EDIT</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">CLEAR...</span></td></tr>
+        <tr data-k="clear erase empty wipe all whole"><th scope="row">Clear the whole pattern</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">PATTERN</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">CLEAR...</span></td></tr>
+        <tr data-k="delete remove track"><th scope="row">Delete the track (asks first)</th><td><kbd>DEL</kbd></td></tr>
       </table>
     </section>
     <section class="group" id="notes">
@@ -400,123 +758,229 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <table>
         <tr data-k="step note add remove toggle"><th scope="row">Step on / off</th><td>tap <kbd>pad</kbd></td></tr>
         <tr data-k="select note step hold"><th scope="row">Select a note</th><td>hold its <kbd>pad</kbd></td></tr>
-        <tr data-k="latch keep select remain"><th scope="row">Keep it selected</th><td>hold <kbd>pad</kbd><span class="plus">+</span><kbd>REMAIN</kbd> (again to let go)</td></tr>
+        <tr data-k="latch keep select remain"><th scope="row">Keep a note selected</th><td>hold <kbd>pad</kbd><span class="plus">+</span><kbd>REMAIN</kbd>; <kbd>REMAIN</kbd> again to deselect</td></tr>
         <tr data-k="velocity note loud soft accent"><th scope="row">Velocity</th><td>hold <kbd>pad</kbd><span class="plus">+</span><kbd>CTRL 1</kbd></td></tr>
         <tr data-k="length note gate duration"><th scope="row">Length</th><td>hold <kbd>pad</kbd><span class="plus">+</span><kbd>CTRL 2</kbd></td></tr>
+        <tr data-k="length fine trim note gate duration"><th scope="row">Length, fine</th><td>hold <kbd>pad</kbd><span class="plus">+</span><kbd>SHIFT</kbd><span class="plus">+</span><kbd>CTRL 2</kbd></td></tr>
         <tr data-k="nudge note timing micro early late mic"><th scope="row">Nudge</th><td>hold <kbd>pad</kbd><span class="plus">+</span><kbd>CTRL 3</kbd></td></tr>
         <tr data-k="pitch note transpose semitone tune"><th scope="row">Pitch</th><td>hold <kbd>pad</kbd><span class="plus">+</span><kbd>SHIFT</kbd><span class="plus">+</span><kbd>CTRL 1</kbd></td></tr>
-        <tr data-k="pitch note semitone"><th scope="row">Pitch, one semitone at a time</th><td>hold <kbd>pad</kbd> + turn <kbd>VALUE</kbd></td></tr>
       </table>
     </section>
     <section class="group" id="bars-and-views">
-      <h3>Bars and views</h3>
+      <h3>Bars and Views</h3>
       <table>
-        <tr data-k="bar page next previous measure"><th scope="row">Next / previous bar</th><td><kbd>SHIFT</kbd> + turn <kbd>VALUE</kbd></td></tr>
-        <tr data-k="length bars pattern long shorter crop cut"><th scope="row">Pattern length in bars</th><td><kbd>RECORD SETTING</kbd> twice <span class="then" aria-label="then">&rsaquo;</span> <span class="item">LENGTH</span>. Shorter with notes past the new end, it asks <span class="item">CROP TO 2 BARS</span> first: <kbd>YES</kbd> cuts them off, <kbd>NO</kbd> keeps the pattern</td></tr>
-        <tr data-k="time signature meter 3/4 2/4 1/4 4/4 5/4 6/4 7/4 waltz beats view only"><th scope="row">Time signature of a new pattern</th><td>on the box&#x27;s own <span class="item">RECORD SETTING</span>, before you record: <kbd>SHIFT</kbd><span class="plus">+</span><kbd>CTRL 2</kbd> <span class="item">TIME SIGN</span>. DOOM OS shows it behind <span class="item">LENGTH</span>. A pattern in 5/4, 6/4 or 7/4 shows the first sixteen steps of each bar and is not edited: <span class="item">7/4: VIEW ONLY</span></td></tr>
-        <tr data-k="follow playhead stay lock bar scroll autoscroll auto-scroll jump page"><th scope="row">Follow the playhead, or stay on your bar</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>HOLD</kbd></td></tr>
-        <tr data-k="view zoom grid lines beats labels"><th scope="row">Grid lines / zoomed view</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
-        <tr data-k="zoom"><th scope="row">Zoom in / out (zoomed view)</th><td><kbd>REMAIN</kbd> + turn <kbd>VALUE</kbd></td></tr>
-        <tr data-k="zoom beat"><th scope="row">Next / previous beat (zoomed view)</th><td><kbd>SHIFT</kbd> + turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="bar page next previous measure"><th scope="row">Next / previous bar</th><td><kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="length bars pattern long shorter crop cut"><th scope="row">Pattern length in bars</th><td><kbd>RECORD SETTING</kbd> twice <span class="then" aria-label="then">&rsaquo;</span> <span class="item">LENGTH</span>. When notes lie past the new end, <span class="item">CROP TO 2 BARS</span> asks first: <span class="item">YES</span> deletes them, <span class="item">NO</span> keeps the pattern unchanged</td></tr>
+        <tr data-k="time signature meter 3/4 2/4 1/4 4/4 5/4 6/4 7/4 waltz beats view only"><th scope="row">Time signature of a new pattern</th><td>set on the SP-404MKII's own RECORD SETTING screen before recording: <kbd>SHIFT</kbd><span class="plus">+</span><kbd>CTRL 2</kbd> (<span class="item">TIME SIGN</span>). DOOM OS shows it beside <span class="item">LENGTH</span>. A pattern in 5/4, 6/4 or 7/4 shows the first 16 steps of each bar and cannot be edited (<span class="item">7/4: VIEW ONLY</span>); a new pattern made in DOOM OS is then 4/4</td></tr>
+        <tr data-k="follow playhead stay lock bar scroll autoscroll auto-scroll jump page"><th scope="row">Follow playhead on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>HOLD</kbd></td></tr>
+        <tr data-k="view zoom grid lines beats labels"><th scope="row">Grid view: GRID, LABELS, BEATS, BOTH, ZOOM</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
+        <tr data-k="zoom"><th scope="row">Zoom in / out (ZOOM view)</th><td><kbd>REMAIN</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="zoom beat"><th scope="row">Next / previous beat (ZOOM view, one beat)</th><td><kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
       </table>
     </section>
     <section class="group" id="piano-roll">
-      <h3>Piano roll</h3>
+      <h3>Piano Roll</h3>
       <table>
         <tr data-k="piano roll melody keys"><th scope="row">Open / close</th><td>press <kbd>VALUE</kbd></td></tr>
         <tr data-k="piano roll scroll"><th scope="row">Scroll up / down</th><td>turn <kbd>VALUE</kbd></td></tr>
-        <tr data-k="piano melody pitch key chromatic"><th scope="row">Give a step a pitch</th><td>hold its <kbd>pad</kbd> + press a <kbd>pad</kbd> as a key (<kbd>pad 5</kbd> = own pitch)</td></tr>
-        <tr data-k="piano roll track"><th scope="row">Other track</th><td><kbd>SHIFT</kbd> + turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="piano melody pitch key chromatic"><th scope="row">Set a step's pitch</th><td>hold its <kbd>pad</kbd><span class="plus">+</span>press a <kbd>pad</kbd> as a key (<kbd>pad 5</kbd> = original pitch)</td></tr>
+        <tr data-k="pitch note semitone"><th scope="row">Pitch, one semitone at a time</th><td>hold its <kbd>pad</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="piano roll track"><th scope="row">Select another track</th><td><kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
       </table>
     </section>
     <section class="group" id="recording">
       <h3>Recording</h3>
       <table>
-        <tr data-k="rehearse practice rec"><th scope="row">Rehearse (pads play, nothing recorded)</th><td><kbd>REC</kbd></td></tr>
+        <tr data-k="rehearse practice rec"><th scope="row">Rehearse (nothing is recorded)</th><td><kbd>REC</kbd></td></tr>
         <tr data-k="record rec take live"><th scope="row">Record</th><td><kbd>REC</kbd> again</td></tr>
         <tr data-k="stop record"><th scope="row">Stop recording</th><td><kbd>EXIT</kbd></td></tr>
-        <tr data-k="record mode single multi chromatic"><th scope="row">Record mode: single / multi / chromatic</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>REC</kbd></td></tr>
-        <tr data-k="new notes quantise quantize swing record settings"><th scope="row">Quantise, swing, velocity, length of new notes</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN EDIT</kbd></td></tr>
-        <tr data-k="hold play pads finger drum"><th scope="row">Pads play samples instead of steps</th><td><kbd>HOLD</kbd></td></tr>
-        <tr data-k="fixed velocity"><th scope="row">Fixed velocity on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 1</kbd></td></tr>
-        <tr data-k="metronome click count tick recplay"><th scope="row">Metronome: on / recplay / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 9</kbd></td></tr>
+        <tr data-k="record mode single multi chromatic velocity"><th scope="row">Record mode: SINGLE, MULTI, CHROMATIC, 16 VEL</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>REC</kbd></td></tr>
+        <tr data-k="record mode single multi chromatic velocity"><th scope="row">Record mode: SINGLE, MULTI, CHROMATIC, 16 VEL</th><td><kbd>RECORD SETTING</kbd> twice <span class="then" aria-label="then">&rsaquo;</span> <span class="item">REC</span></td></tr>
+        <tr data-k="16 velocity levels volume record mode"><th scope="row">Record mode 16 VEL on / off</th><td>on the grid: <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 2</kbd></td></tr>
+        <tr data-k="new notes quantise quantize swing record settings"><th scope="row">NEW NOTES: quantize, swing, velocity, length</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN EDIT</kbd></td></tr>
+        <tr data-k="hold play pads finger drum"><th scope="row">Pads play samples, not steps</th><td><kbd>HOLD</kbd></td></tr>
+        <tr data-k="fixed velocity"><th scope="row">FIXED VELOCITY on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 1</kbd></td></tr>
+        <tr data-k="metronome click count tick recplay"><th scope="row">Metronome: ON, RECPLAY, OFF</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 9</kbd></td></tr>
         <tr data-k="ext source external input line mic guitar usb audio phone computer monitor"><th scope="row">Inputs on / off: line in, mic, USB audio</th><td><kbd>EXT SOURCE</kbd></td></tr>
-        <tr data-k="record automation motion knob"><th scope="row">Record knob moves</th><td>effect page open, <kbd>REC</kbd> twice, turn <kbd>CTRL</kbd> knobs</td></tr>
+        <tr data-k="record automation motion knob"><th scope="row">Record effect movements</th><td>effect page open, <kbd>REC</kbd> twice, turn the CTRL knobs</td></tr>
+      </table>
+    </section>
+    <section class="group" id="bounce-controls">
+      <h3>Bounce in Place</h3>
+      <table>
+        <tr data-k="bounce resample record track in place sample"><th scope="row">Bounce the selected track in place</th><td><kbd>RESAMPLE</kbd></td></tr>
+        <tr data-k="bounce resample record track in place sample"><th scope="row">Bounce the selected track in place</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">EDIT</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">BOUNCE</span></td></tr>
+        <tr data-k="bounce resample record mix everything pattern"><th scope="row">Bounce everything you hear onto a new pad</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RESAMPLE</kbd></td></tr>
+        <tr data-k="bounce resample record mix everything pattern"><th scope="row">Bounce everything you hear onto a new pad</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">PATTERN</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">BOUNCE</span></td></tr>
+        <tr data-k="bounce resample stop cancel"><th scope="row">Stop a bounce</th><td><kbd>EXIT</kbd></td></tr>
+        <tr data-k="bounce in place track back"><th scope="row">The track back after a bounce in place</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd></td></tr>
+      </table>
+    </section>
+    <section class="group" id="instruments-controls">
+      <h3>Instruments</h3>
+      <table>
+        <tr data-k="synth drum engine sound browser"><th scope="row">Load an instrument onto an empty pad</th><td>hold <kbd>SUB PAD</kbd><span class="plus">+</span>tap an empty <kbd>pad</kbd>, release <kbd>SUB PAD</kbd>, turn <kbd>VALUE</kbd>, press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="kit drum 808 909 606 list"><th scope="row">INSTRUMENTS / KITS in the browser</th><td><kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="kit drum bank fill load"><th scope="row">Load a kit into a bank</th><td>in the browser: select a kit, press <kbd>VALUE</kbd>, press a <kbd>BANK</kbd> button, press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="edit sound synth parameters"><th scope="row">Instrument editor</th><td><kbd>START/END</kbd></td></tr>
+        <tr data-k="replace swap change other instrument sound"><th scope="row">Replace the instrument</th><td>in the editor: <kbd>REMAIN</kbd>, turn <kbd>VALUE</kbd>, press <kbd>VALUE</kbd>, <span class="item">YES</span></td></tr>
+        <tr data-k="delete remove unload clear empty pad"><th scope="row">Remove the instrument from its pad</th><td>outside DOOM OS: hold <kbd>DEL</kbd><span class="plus">+</span><kbd>pad</kbd>, press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="section parameters page"><th scope="row">Select a section</th><td>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="parameter knob"><th scope="row">Section parameters</th><td><kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd> (hold <kbd>SHIFT</kbd> for finer steps)</td></tr>
+        <tr data-k="listen audition preview"><th scope="row">Hear the pad</th><td>hold <kbd>SUB PAD</kbd></td></tr>
+        <tr data-k="chromatic keyboard keys notes pitch play"><th scope="row">Chromatic mode on / off</th><td>in the editor: <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 4</kbd></td></tr>
+        <tr data-k="chromatic octave up down transpose"><th scope="row">Octave, in chromatic mode</th><td><kbd>BANK</kbd> buttons: <kbd>C/H</kbd> the instrument's own, <kbd>A/F</kbd> <kbd>B/G</kbd> down, <kbd>D/I</kbd> <kbd>E/J</kbd> up</td></tr>
+        <tr data-k="done bounce save back"><th scope="row">Close the editor and save the sound</th><td><kbd>EXIT</kbd></td></tr>
+      </table>
+    </section>
+    <section class="group" id="parameter-locks">
+      <h3>Parameter Locks</h3>
+      <p class="gnote">On an instrument track.</p>
+      <table>
+        <tr data-k="parameter lock p-lock step own sound mark edit"><th scope="row">Start editing</th><td><kbd>MARK</kbd> on the grid or in the instrument editor</td></tr>
+        <tr data-k="parameter lock p-lock step select"><th scope="row">Select a step</th><td>tap its <kbd>pad</kbd></td></tr>
+        <tr data-k="parameter lock p-lock section"><th scope="row">Select a section</th><td>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="parameter lock p-lock knob"><th scope="row">The step's parameters</th><td><kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd></td></tr>
+        <tr data-k="parameter lock p-lock listen audition"><th scope="row">Hear the step</th><td>hold <kbd>SUB PAD</kbd></td></tr>
+        <tr data-k="parameter lock p-lock save keep"><th scope="row">Save</th><td><kbd>MARK</kbd> again</td></tr>
+        <tr data-k="parameter lock p-lock reset clear"><th scope="row">Reset the selected step</th><td><kbd>DEL</kbd></td></tr>
+        <tr data-k="parameter lock p-lock discard cancel"><th scope="row">Discard the changes</th><td><kbd>EXIT</kbd></td></tr>
+      </table>
+    </section>
+    <section class="group" id="arpeggiator">
+      <h3>Arpeggiator</h3>
+      <table>
+        <tr data-k="arp arpeggio keys keyboard scale"><th scope="row">Open the arpeggiator</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">ARP</span></td></tr>
+        <tr data-k="arp arpeggio on off"><th scope="row">Arpeggiator on / off</th><td>press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="arp latch keep"><th scope="row">Hold the arpeggio</th><td><kbd>HOLD</kbd></td></tr>
+        <tr data-k="arp page"><th scope="row">PLAY / PITCH page</th><td>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="arp type rate gate"><th scope="row">TYPE, RATE, GATE</th><td>PLAY page: <kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd></td></tr>
+        <tr data-k="arp key scale octave"><th scope="row">KEY, SCALE, OCT</th><td>PITCH page: <kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd></td></tr>
+        <tr data-k="arp fine"><th scope="row">Finer steps</th><td><kbd>SHIFT</kbd><span class="plus">+</span>turn a CTRL knob</td></tr>
+        <tr data-k="arp instrument edit"><th scope="row">Instrument editor</th><td><kbd>START/END</kbd></td></tr>
+        <tr data-k="arp print write record track"><th scope="row">Print the arpeggio into the track</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">GENERATE</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">PRINT ARP...</span></td></tr>
+        <tr data-k="arp clear delete notes empty track"><th scope="row">Clear the track's notes</th><td><kbd>DEL</kbd>, or <kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">GENERATE</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">CLEAR...</span></td></tr>
+        <tr data-k="arp back close"><th scope="row">Return to the grid</th><td><kbd>EXIT</kbd></td></tr>
       </table>
     </section>
     <section class="group" id="pattern-tools">
-      <h3>Pattern tools</h3>
+      <h3>Pattern Tools</h3>
       <p class="gnote"><kbd>PATTERN EDIT</kbd>, turn <kbd>VALUE</kbd> to a tool, press <kbd>VALUE</kbd>.</p>
       <table>
-        <tr data-k="quantise quantize grid snap tidy"><th scope="row">Quantise</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">QUANT</span></td></tr>
+        <tr data-k="quantise quantize grid snap tidy"><th scope="row">Quantize</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">QUANT</span></td></tr>
         <tr data-k="swing shuffle groove"><th scope="row">Swing</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SWING</span></td></tr>
-        <tr data-k="swing eighths 1/8"><th scope="row">Swing on eighths instead of sixteenths</th><td>in <span class="item">SWING</span>: <kbd>SHIFT</kbd> + turn <kbd>VALUE</kbd></td></tr>
-        <tr data-k="shift move rotate offset"><th scope="row">Move all notes by whole steps</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SHIFT</span></td></tr>
+        <tr data-k="swing eighths 1/8"><th scope="row">Swing on 8th notes</th><td>in <span class="item">SWING</span>: <kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="shift move rotate offset"><th scope="row">Move notes by whole steps</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SHIFT</span></td></tr>
         <tr data-k="double length copy"><th scope="row">Double the pattern</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">DOUBLE</span></td></tr>
         <tr data-k="halve half shorten"><th scope="row">Halve the pattern</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">HALVE</span></td></tr>
         <tr data-k="reverse backwards"><th scope="row">Reverse</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">REVERSE</span></td></tr>
-        <tr data-k="humanise humanize random human feel"><th scope="row">Humanise</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">HUMAN</span></td></tr>
+        <tr data-k="humanise humanize random human feel"><th scope="row">Humanize</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">HUMAN</span></td></tr>
         <tr data-k="transpose pitch key"><th scope="row">Transpose</th><td><kbd>PATTERN EDIT</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">TRANSP</span></td></tr>
         <tr data-k="one track only"><th scope="row">Tools on one track only</th><td><kbd>PATTERN EDIT</kbd>, tap the track's <kbd>pad</kbd></td></tr>
       </table>
     </section>
     <section class="group" id="mixer">
       <h3>Mixer</h3>
-      <p class="gnote"><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">MIXER</span></p>
+      <p class="gnote">hold <kbd>RECORD SETTING</kbd> for 0.6 seconds, or <kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">MIXER</span></p>
       <table>
         <tr data-k="mixer track"><th scope="row">Select a track</th><td>turn <kbd>VALUE</kbd></td></tr>
         <tr data-k="pan stereo left right"><th scope="row">Pan</th><td><kbd>CTRL 1</kbd></td></tr>
         <tr data-k="bus fx send routing dry"><th scope="row">Bus: B1, B2 or DRY</th><td><kbd>CTRL 2</kbd></td></tr>
         <tr data-k="level volume fader"><th scope="row">Level</th><td><kbd>CTRL 3</kbd></td></tr>
-        <tr data-k="mute"><th scope="row">Mute / unmute</th><td><kbd>SHIFT</kbd> + press <kbd>VALUE</kbd></td></tr>
-        <tr data-k="solo alone only isolate"><th scope="row">Solo / solo off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd></td></tr>
-        <tr data-k="meter display"><th scope="row">Level as arrows / dithered</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
-        <tr data-k="back close mixer"><th scope="row">Back to the grid</th><td><kbd>EXIT</kbd></td></tr>
+        <tr data-k="pan bus level value"><th scope="row">Pan, bus or level with VALUE</th><td>press <kbd>VALUE</kbd> to select, turn <kbd>VALUE</kbd> to change</td></tr>
+        <tr data-k="mute"><th scope="row">Mute / unmute</th><td><kbd>SHIFT</kbd><span class="plus">+</span>press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="mute unmute pad mute silence"><th scope="row">Mute / unmute a pad</th><td>tap the <kbd>pad</kbd></td></tr>
+        <tr data-k="solo alone only isolate"><th scope="row">Solo on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd></td></tr>
+        <tr data-k="solo alone only isolate pad"><th scope="row">Solo a track on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span>its <kbd>pad</kbd></td></tr>
+        <tr data-k="meter display look view names track name long"><th scope="row">Display style: ARROWS, DITHER, with or without NAMES</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
+        <tr data-k="back close mixer"><th scope="row">Return to the grid</th><td><kbd>EXIT</kbd></td></tr>
       </table>
     </section>
-    <section class="group" id="effects" hidden>  <!-- the box's own controls: found by the search, not shown -->
+    <section class="group" id="eqs">
+      <h3>EQ</h3>
+      <p class="gnote">in the mixer</p>
+      <table>
+        <tr data-k="eq equalizer equaliser tone display curve"><th scope="row">Show / hide the EQ display</th><td><kbd>PITCH/SPEED</kbd></td></tr>
+        <tr data-k="eq track pad"><th scope="row">Select a track</th><td>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="eq equalizer equaliser edit"><th scope="row">Open the EQ screen</th><td>press <kbd>VALUE</kbd> on the EQ display</td></tr>
+        <tr data-k="eq equalizer equaliser edit"><th scope="row">Open the EQ screen and set a band</th><td>turn <kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd> on the EQ display</td></tr>
+        <tr data-k="eq bass treble low mid high gain boost cut"><th scope="row">LOW, MID and HIGH gain</th><td><kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd></td></tr>
+        <tr data-k="eq advanced adv frequency q"><th scope="row">ADV on / off</th><td>press <kbd>VALUE</kbd> on the EQ screen</td></tr>
+        <tr data-k="eq band adv"><th scope="row">Select a band on ADV</th><td>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="eq gain frequency freq q width slope adv"><th scope="row">GAIN, FREQ and Q of the band</th><td><kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd></td></tr>
+        <tr data-k="eq fine"><th scope="row">Finer steps</th><td><kbd>SHIFT</kbd><span class="plus">+</span>turn a CTRL knob</td></tr>
+        <tr data-k="eq back close"><th scope="row">Back to the EQ display, then the mixer</th><td><kbd>EXIT</kbd></td></tr>
+      </table>
+    </section>
+    <section class="group" id="waveform">
+      <h3>Waveform Display</h3>
+      <table>
+        <tr data-k="wave scope oscilloscope meter output out level display"><th scope="row">Show the output's waveform</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>START/END</kbd></td></tr>
+        <tr data-k="wave scope oscilloscope meter track level display"><th scope="row">Show the selected track's waveform</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>START/END</kbd> again</td></tr>
+        <tr data-k="wave scope oscilloscope close off"><th scope="row">Hide the waveform display</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>START/END</kbd> a third time</td></tr>
+      </table>
+    </section>
+    <section class="group" id="effects">
       <h3>Effects</h3>
       <table>
-        <tr data-k="effect fx on off"><th scope="row">Effect on / off</th><td>its FX button (<kbd>FILTER+DRIVE</kbd> ... <kbd>MFX</kbd>)</td></tr>
+        <tr data-k="effect fx on page"><th scope="row">Effect on, with its page</th><td>its FX button (<kbd>FILTER+DRIVE</kbd> ... <kbd>MFX</kbd>)</td></tr>
+        <tr data-k="effect fx off"><th scope="row">Effect off</th><td>its FX button again</td></tr>
+        <tr data-k="effect fx page parameters reopen"><th scope="row">Reopen the effect page</th><td><kbd>REMAIN</kbd><span class="plus">+</span>its FX button (<kbd>FILTER+DRIVE</kbd> ... <kbd>DJFX LOOPER</kbd>), the effect on</td></tr>
         <tr data-k="effect parameter knob"><th scope="row">Effect parameters</th><td><kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd> (effect page open)</td></tr>
         <tr data-k="effect page 2 ctrl 4 5 6"><th scope="row">Second page of parameters</th><td>hold <kbd>VALUE</kbd></td></tr>
         <tr data-k="effect close"><th scope="row">Close the effect page</th><td><kbd>EXIT</kbd></td></tr>
-        <tr data-k="mfx choose effect"><th scope="row">Choose the MFX effect</th><td>hold <kbd>MFX</kbd><span class="plus">+</span><kbd>pad</kbd></td></tr>
+        <tr data-k="mfx choose effect"><th scope="row">Select the MFX effect</th><td>hold <kbd>MFX</kbd><span class="plus">+</span><kbd>pad</kbd></td></tr>
         <tr data-k="mfx"><th scope="row">MFX effects 17 to 32</th><td>hold <kbd>MFX</kbd><span class="plus">+</span><kbd>DJFX LOOPER</kbd><span class="plus">+</span><kbd>pad</kbd></td></tr>
         <tr data-k="mfx"><th scope="row">MFX effects 33 to 48</th><td>hold <kbd>MFX</kbd><span class="plus">+</span><kbd>ISOLATOR</kbd><span class="plus">+</span><kbd>pad</kbd></td></tr>
-        <tr data-k="bus"><th scope="row">Other bus</th><td><kbd>BUS FX</kbd></td></tr>
-        <tr data-k="record automation motion knob"><th scope="row">Record knob moves</th><td>effect page open, <kbd>REC</kbd> twice, turn <kbd>CTRL</kbd> knobs</td></tr>
+        <tr data-k="bus"><th scope="row">Switch bus</th><td><kbd>BUS FX</kbd></td></tr>
+        <tr data-k="bus fx settings 3 4 routing"><th scope="row">Bus effects settings</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 16</kbd></td></tr>
+        <tr data-k="record automation motion knob"><th scope="row">Record effect movements</th><td>effect page open, <kbd>REC</kbd> twice, turn the CTRL knobs</td></tr>
+      </table>
+    </section>
+    <section class="group" id="side-chain">
+      <h3>Side Chain</h3>
+      <table>
+        <tr data-k="sidechain duck ducking compressor"><th scope="row">Open the side chain</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SIDECHAIN</span></td></tr>
+        <tr data-k="sidechain source target duck bus"><th scope="row">Source and target</th><td>press <kbd>VALUE</kbd> on a bus, then on another</td></tr>
+        <tr data-k="sidechain compressor bus"><th scope="row">Compress one bus</th><td>press <kbd>VALUE</kbd> twice on the same bus</td></tr>
+        <tr data-k="sidechain off"><th scope="row">Side chain off</th><td>hold <kbd>DEL</kbd><span class="plus">+</span>press <kbd>VALUE</kbd> on the source or target bus</td></tr>
+        <tr data-k="sidechain threshold ratio release"><th scope="row">THR, RAT, REL</th><td><kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd></td></tr>
+        <tr data-k="sidechain fine"><th scope="row">Finer steps</th><td><kbd>SHIFT</kbd><span class="plus">+</span>turn a CTRL knob</td></tr>
+        <tr data-k="sidechain gain makeup"><th scope="row">GAIN</th><td>press <kbd>VALUE</kbd> on <span class="item">GAIN</span>, turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="sidechain duck view meter"><th scope="row">How far the target is turned down</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
+        <tr data-k="sidechain back close"><th scope="row">Return to the grid</th><td><kbd>EXIT</kbd></td></tr>
       </table>
     </section>
     <section class="group" id="automation">
-      <h3>Automation</h3>
+      <h3>FX Automation</h3>
       <table>
-        <tr data-k="automation motion lanes"><th scope="row">Automation screen on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>MARK</kbd></td></tr>
+        <tr data-k="automation motion lanes"><th scope="row">FX Automation on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>MARK</kbd></td></tr>
         <tr data-k="automation parameter"><th scope="row">Next parameter</th><td>turn <kbd>VALUE</kbd></td></tr>
-        <tr data-k="automation effect"><th scope="row">Next effect</th><td><kbd>SHIFT</kbd> + turn <kbd>VALUE</kbd></td></tr>
-        <tr data-k="automation edit"><th scope="row">Edit a parameter step by step</th><td>press <kbd>VALUE</kbd></td></tr>
-        <tr data-k="automation step value"><th scope="row">A step&#x27;s value</th><td>hold <kbd>pad</kbd> + turn <kbd>VALUE</kbd></td></tr>
-        <tr data-k="automation delete step"><th scope="row">Remove a step&#x27;s move</th><td><kbd>DEL</kbd><span class="plus">+</span><kbd>pad</kbd></td></tr>
-        <tr data-k="automation clear delete"><th scope="row">Remove all moves of a parameter</th><td><kbd>DEL</kbd> + press <kbd>VALUE</kbd></td></tr>
-        <tr data-k="automation copy paste"><th scope="row">Copy / paste a parameter</th><td><kbd>COPY</kbd> + press <kbd>VALUE</kbd></td></tr>
-        <tr data-k="motion play automation"><th scope="row">Moves play on / off</th><td><kbd>START/END</kbd></td></tr>
-        <tr data-k="automation bar"><th scope="row">Next / previous bar</th><td><kbd>REMAIN</kbd> + turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="automation effect"><th scope="row">Next / previous effect (overview)</th><td><kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="automation edit"><th scope="row">Open a parameter's steps</th><td>press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="automation step value"><th scope="row">Change a step's value (one parameter)</th><td>tap a <kbd>pad</kbd>, turn <kbd>VALUE</kbd>; or hold <kbd>pad</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="automation delete step"><th scope="row">Delete a step's value (one parameter)</th><td><kbd>DEL</kbd><span class="plus">+</span><kbd>pad</kbd></td></tr>
+        <tr data-k="automation clear delete"><th scope="row">Delete a parameter's movements (overview)</th><td><kbd>DEL</kbd><span class="plus">+</span>press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="automation copy paste"><th scope="row">Copy / paste a parameter (overview, same effect)</th><td><kbd>COPY</kbd><span class="plus">+</span>press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="motion play automation efx"><th scope="row">EFX MOTION PLAY on / off</th><td><kbd>START/END</kbd></td></tr>
+        <tr data-k="automation bar"><th scope="row">Next / previous bar</th><td><kbd>REMAIN</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
       </table>
     </section>
     <section class="group" id="settings">
       <h3>Settings</h3>
+      <p class="gnote">These work on the SP-404MKII's own screens. Inside DOOM OS, <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> turns step 13 on or off.</p>
       <table>
-        <tr data-k="settings boot animation grid lines follow"><th scope="row">DOOM OS settings</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SYSTEM</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">DOOM OS</span> tab</td></tr>
-        <tr data-k="shortcut custom combo"><th scope="row">Your own shortcuts</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SYSTEM</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SHORTCUT</span> tab</td></tr>
-        <tr data-k="utility menu"><th scope="row">Utility menu</th><td><kbd>REMAIN</kbd><span class="plus">+</span><kbd>PATTERN EDIT</kbd></td></tr>
-        <tr data-k="pattern select screen"><th scope="row">The box&#x27;s pattern screen</th><td><kbd>REMAIN</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
+        <tr data-k="settings boot animation grid lines follow exit hold start-up"><th scope="row">DOOM OS settings</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SYSTEM</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">DOOM OS</span> tab</td></tr>
+        <tr data-k="shortcut custom combo"><th scope="row">Custom shortcuts</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 13</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SYSTEM</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">SHORTCUT</span> tab</td></tr>
+        <tr data-k="utility menu"><th scope="row">UTILITY menu</th><td><kbd>REMAIN</kbd><span class="plus">+</span><kbd>PATTERN EDIT</kbd></td></tr>
+        <tr data-k="pattern select screen"><th scope="row">The SP-404MKII's pattern select screen</th><td><kbd>REMAIN</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
       </table>
     </section>
     </div>
   </section>
 
   <footer class="site">
-    <span>DOOM OS 0.6.1 alpha &middot; Klangfeld Labs</span>
+    <span>DOOM OS 0.7 &middot; Klangfeld Labs</span>
     <nav>
       <a href="https://klangfeldlabs.com/doom-os" target="_blank" rel="noopener">klangfeldlabs.com/doom-os &#8599;</a>
       <a href="https://github.com/klangfeld-labs/doom-os" target="_blank" rel="noopener">DOOM OS on GitHub &#8599;</a>
@@ -537,7 +1001,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
     var found = rows.filter(function (x) { return words.every(function (w) { return x.key.indexOf(w) !== -1; }); });
     hits.hidden = false;
     if (!found.length) {
-      hits.innerHTML = '<p class="empty">Nothing found. Try another word, or hold SHIFT for three seconds on the box and press the button you are curious about.</p>';
+      hits.innerHTML = '<p class="empty">Nothing found. Try another word, or use help mode: hold SHIFT for three seconds on the SP-404MKII, then press the control.</p>';
       return;
     }
     var t = document.createElement('table');
