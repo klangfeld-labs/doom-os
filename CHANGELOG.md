@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.7.1, build E7F5 (2026-10-29)
+
+**Improvements**
+- **Preview instruments before selecting them**  
+  In the instrument browser, hold SUB PAD to preview the selected instrument. Turn the encoder while holding SUB PAD to preview other instruments.
+- **Switch instruments on the fly**  
+  In the instrument editor, press REMAIN and turn the encoder to try different instruments instantly, even while the pattern is playing. Press the encoder to confirm your choice, or EXIT to restore the original instrument.
+- **Bounce in place to any empty pad**  
+  Press RESAMPLE to open the bounce screen, which shows what will be bounced and how the pattern will be affected. Choose CUT, TAIL or LOOP, select an empty pad, then press RESAMPLE to start recording. Once finished, the new pad is shown on screen.
+
+**Fixes**
+- **Mixer solo now uses REMAIN + pad instead of SHIFT**  
+  SHIFT + pad previously soloed a track but also triggered the pad's SHIFT functions, such as FIXED VELOCITY. Solo now uses REMAIN + pad, leaving SHIFT + pad to work as expected.
+- **Fixed button LED states**  
+  Certain buttons previously remained dimly lit when there were turn off or inactive, making it difficult to distinguish their on and off states. The LEDs now behave the same as in the stock screens.
+
 ## 0.7, build 0D8C (2026-10-28)
 
 **New**

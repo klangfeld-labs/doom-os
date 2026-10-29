@@ -363,7 +363,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
 
   <section class="part" id="bounce">
     <h2>Bounce in Place</h2>
-    <p class="sub">DOOM OS records the selected track, or everything you hear, with its effects onto the bank's next empty pad. A track bounced this way is put in place: its notes are replaced by one note of the new pad.</p>
+    <p class="sub">DOOM OS records the selected track, or everything you hear, with its effects onto an empty pad you tap. A track bounced this way is put in place: its notes are replaced by one note of the new pad.</p>
     <div class="tabs">
       <!-- a radio and its label per tab, then one .tab per label, in the same order -->
       <input type="radio" name="bounce" id="bounce-1" checked>
@@ -373,16 +373,17 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <div class="tab">
         <ol class="first">
           <li><span>Select a track and press <kbd>RESAMPLE</kbd>. To record everything you hear instead, press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>RESAMPLE</kbd>.</span></li>
-          <li><span>Turn <kbd>VALUE</kbd> to <span class="item">CUT...</span>, <span class="item">TAIL...</span> or <span class="item">LOOP...</span> and press <kbd>VALUE</kbd>.</span></li>
-          <li><span>Select <span class="item">YES</span>. The pattern plays from its start while it is recorded; <kbd>RESAMPLE</kbd> blinks.</span></li>
+          <li><span>Turn <kbd>VALUE</kbd> to <span class="item">CUT</span>, <span class="item">TAIL</span> or <span class="item">LOOP</span>.</span></li>
+          <li><span>Tap an empty pad. To use another bank, press its bank button first. <kbd>RESAMPLE</kbd> blinks.</span></li>
+          <li><span>Press <kbd>RESAMPLE</kbd> or <kbd>VALUE</kbd>. The pattern plays from its start while it is recorded; <kbd>RESAMPLE</kbd> lights.</span></li>
         </ol>
       </div>
       <div class="tab">
-        <p class="how">Press <kbd>RECORD SETTING</kbd> to open the TRACK page and select <span class="item">EDIT</span> <span class="then">&rsaquo;</span> <span class="item">BOUNCE</span> for the selected track, or <span class="item">PATTERN</span> <span class="then">&rsaquo;</span> <span class="item">BOUNCE</span> for everything you hear. Then select <span class="item">CUT...</span>, <span class="item">TAIL...</span> or <span class="item">LOOP...</span> and <span class="item">YES</span>.</p>
+        <p class="how">Press <kbd>RECORD SETTING</kbd> to open the TRACK page and select <span class="item">EDIT</span> <span class="then">&rsaquo;</span> <span class="item">BOUNCE...</span> for the selected track, or <span class="item">PATTERN</span> <span class="then">&rsaquo;</span> <span class="item">BOUNCE...</span> for everything you hear. Then turn <kbd>VALUE</kbd> to <span class="item">CUT</span>, <span class="item">TAIL</span> or <span class="item">LOOP</span>, tap an empty pad and press <kbd>RESAMPLE</kbd> or <kbd>VALUE</kbd>.</p>
       </div>
     </div>
     <figure class="panels">
-      <img src="img/doomos-bounce.gif" width="1040" height="560" alt="RESAMPLE opens the BOUNCE rows of the TRACK page for the selected track, B3 FM, on CUT...; VALUE turns to TAIL...; a press asks BOUNCE TRACK B3 with NO and YES; EXIT returns to the grid without recording.">
+      <img src="img/doomos-bounce.gif" width="1040" height="560" alt="RESAMPLE opens the bounce card for the selected track on CUT; VALUE turns to TAIL; an empty pad tapped names the new pad; EXIT returns to the grid without recording.">
     </figure>
     <table class="knobs">
       <tr><th><span class="item">CUT</span></th><td>The pattern's length</td></tr>
@@ -390,8 +391,9 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <tr><th><span class="item">LOOP</span></th><td>The pattern's length, taken from its second pass, so the sample loops as the pattern does</td></tr>
     </table>
     <div class="facts">
-      <p><b>The new pad:</b> the bank's next pad with no sample and no note in the pattern, named <span class="item">BOUNCE</span> and the track's pad. Nothing on another pad is overwritten. The screen shows <span class="item">NO EMPTY PAD</span> when the bank has none.</p>
-      <p><b>In place:</b> a track's bounce plays the track solo, then replaces its notes with one note of the new pad on the first step. Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd> to undo it; the old sample stays on its pad. <span class="item">BOUNCED, TRACK KEPT</span> means the pattern was too large for the undo, so the track was left as it is. A bounce of everything you hear leaves the pattern unchanged.</p>
+      <p><b>The card:</b> its first line names what is bounced, <span class="item">BOUNCE TRACK C9</span> or <span class="item">BOUNCE MIX</span>; its second says what becomes of the pattern once you tap a pad: <span class="item">C9 -&gt; C10</span> for a track, <span class="item">KEEP ORIGINAL PATTERN</span> for everything you hear. It opens on the tail you bounced last. <kbd>EXIT</kbd> closes it without recording.</p>
+      <p><b>The new pad:</b> the pad you tap. A pad with a sample, or with notes in the pattern, is refused with <span class="item">PAD IN USE</span>, so nothing on another pad is overwritten. The new pad is named <span class="item">BOUNCE</span> and the track's pad, or the pattern's pad for everything you hear. When the bounce ends, the screen names it, for example <span class="item">BOUNCED TO C10</span>.</p>
+      <p><b>In place:</b> a track's bounce plays the track solo, then replaces its notes with one note of the new pad on the first step. Press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd> to undo it; the old sample stays on its pad. <span class="item">C10, TRACK KEPT</span> means the bounce is on C10, but the pattern was too large for the undo, so the track was left as it is. A bounce of everything you hear leaves the pattern unchanged.</p>
       <p><b>Stop:</b> press <kbd>EXIT</kbd> to stop a bounce. Stopping the pattern, selecting another pattern or turning <kbd>REC</kbd> on stops it too; the screen shows <span class="item">BOUNCE STOPPED</span> and no pad is written.</p>
       <p><b>A mono sample</b> bounces as a mono sample, so the new pad starts exactly when the track did.</p>
     </div>
@@ -404,9 +406,10 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
     <ol class="first">
       <li><span>On the step grid, hold <kbd>SUB PAD</kbd>, tap an empty pad (one that does not light up), and release <kbd>SUB PAD</kbd>. The instrument browser opens, with <span class="item">INSTRUMENTS</span> and <span class="item">KITS</span> as tabs at the top.</span></li>
       <li><span>Turn <kbd>VALUE</kbd> to select an instrument.</span></li>
+      <li><span>Hold <kbd>SUB PAD</kbd> to preview the selected instrument. Turn <kbd>VALUE</kbd> while you hold <kbd>SUB PAD</kbd> to preview the next one.</span></li>
       <li><span>Press <kbd>VALUE</kbd>. The instrument is loaded onto the pad, and the instrument editor opens.</span></li>
     </ol>
-    <p class="sub">Press <kbd>EXIT</kbd> in the browser to return to the grid without loading an instrument.</p>
+    <p class="sub">Press <kbd>EXIT</kbd> in the browser to return to the grid without loading an instrument. Kits are not previewed.</p>
     <figure class="panels">
       <img src="img/doomos-instrument-browser.png" width="1040" height="490" alt="The instrument browser: the INSTRUMENTS and KITS tabs at the top with the position in the list, the selected instrument, FM, named in large letters with its description, TWO OPERATORS, and its picture on the left.">
     </figure>
@@ -419,7 +422,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <li><span>Press <kbd>EXIT</kbd>. DOOM OS saves the sound to the pad and returns to the grid.</span></li>
     </ol>
     <p class="sub">In the editor, the pads show the track's steps; tap a pad to turn a step on or off. Blue pads are steps with their own parameter values (see <a href="#plocks">Parameter Locks</a>).</p>
-    <p class="sub">To replace the instrument, press <kbd>REMAIN</kbd> in the editor. The browser opens at the current instrument. Turn <kbd>VALUE</kbd> to another instrument and press <kbd>VALUE</kbd>. The question names the current instrument, for example <span class="item">REPLACE KICK</span>: turn <kbd>VALUE</kbd> to <span class="item">YES</span> and press <kbd>VALUE</kbd>. The notes stay on the track and play the new instrument at its default parameters. Press <kbd>EXIT</kbd> to return to the editor without changes.</p>
+    <p class="sub">To replace the instrument, press <kbd>REMAIN</kbd> in the editor. The browser opens at the current instrument. Turn <kbd>VALUE</kbd> to select another instrument: the track plays it at once, also while the pattern plays, and <kbd>SUB PAD</kbd> previews it. Nothing is saved yet. Press <kbd>VALUE</kbd> to keep the selected instrument. The question names the current instrument, for example <span class="item">REPLACE KICK</span>: turn <kbd>VALUE</kbd> to <span class="item">YES</span> and press <kbd>VALUE</kbd>. The notes stay on the track and play the new instrument at its default parameters; the previous instrument's parameter values are not kept. Press <kbd>EXIT</kbd> in the browser to return to the editor with the original instrument.</p>
     <p class="sub">To remove an instrument from its pad, delete the pad's sample on the SP-404MKII's own screens: press <kbd>EXIT</kbd> to leave DOOM OS, hold <kbd>DEL</kbd>, press the pad, and press <kbd>VALUE</kbd>. This deletes the instrument's sound from the pad and cannot be undone. The pad is empty again, so hold <kbd>SUB PAD</kbd> and tap it to open the instrument browser. The notes stay on the track; to delete them, press <kbd>DEL</kbd> on the grid.</p>
     <figure class="panels">
       <img src="img/doomos-instruments.gif" width="1040" height="560" alt="START/END opens the FM track's instrument editor; SHIFT + pad 4 turns CHROMATIC on; VALUE selects the MOD section; REMAIN opens the browser at FM, a turn selects Wave, and SHIFT with a turn selects the kits; EXIT returns to the editor unchanged.">
@@ -549,7 +552,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
     <div class="facts">
       <p><b>Saving:</b> pan, bus and level are the pads' own settings, so the SP-404MKII plays them everywhere. They are saved with the project when you leave the mixer. Setting the pan of a pad set to MONO turns MONO off.</p>
       <p><b>Display style:</b> press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd> to select <span class="item">ARROWS</span>, <span class="item">DITHER</span>, <span class="item">ARROWS + NAMES</span> or <span class="item">DITHER + NAMES</span>. With NAMES, the selected strip's full name appears above it for two seconds when you select another strip.</p>
-      <p><b>Mute and solo:</b> hold <kbd>SHIFT</kbd> and press <kbd>VALUE</kbd> to mute or unmute the selected track; press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd> to play it solo. In the mixer, tap a pad to mute or unmute it, as with <kbd>SHIFT</kbd><span class="plus">+</span><kbd>REVERSE</kbd> on the SP-404MKII: a muted pad lights red, a track of the pattern white, another pad with a sample dim white, and the <kbd>BANK</kbd> buttons select the bank. Hold <kbd>SHIFT</kbd> and press a track's pad to play that track solo, and again to turn solo off; <kbd>SHIFT</kbd><span class="plus">+</span><kbd>pad 9</kbd> and <kbd>pad 16</kbd> stay the metronome and the bus effects. Press <kbd>EXIT</kbd> to return to the grid.</p>
+      <p><b>Mute and solo:</b> hold <kbd>SHIFT</kbd> and press <kbd>VALUE</kbd> to mute or unmute the selected track; press <kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd> to play it solo. In the mixer, tap a pad to mute or unmute it, as with <kbd>SHIFT</kbd><span class="plus">+</span><kbd>REVERSE</kbd> on the SP-404MKII: a muted pad lights red, a track of the pattern white, another pad with a sample dim white, and the <kbd>BANK</kbd> buttons select the bank. Hold <kbd>REMAIN</kbd> and press a track's pad to play that track solo, and again to turn solo off. Press <kbd>EXIT</kbd> to return to the grid.</p>
     </div>
   </section>
 
@@ -809,9 +812,13 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <h3>Bounce in Place</h3>
       <table>
         <tr data-k="bounce resample record track in place sample"><th scope="row">Bounce the selected track in place</th><td><kbd>RESAMPLE</kbd></td></tr>
-        <tr data-k="bounce resample record track in place sample"><th scope="row">Bounce the selected track in place</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">EDIT</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">BOUNCE</span></td></tr>
+        <tr data-k="bounce resample record track in place sample"><th scope="row">Bounce the selected track in place</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">EDIT</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">BOUNCE...</span></td></tr>
         <tr data-k="bounce resample record mix everything pattern"><th scope="row">Bounce everything you hear onto a new pad</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RESAMPLE</kbd></td></tr>
-        <tr data-k="bounce resample record mix everything pattern"><th scope="row">Bounce everything you hear onto a new pad</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">PATTERN</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">BOUNCE</span></td></tr>
+        <tr data-k="bounce resample record mix everything pattern"><th scope="row">Bounce everything you hear onto a new pad</th><td><kbd>RECORD SETTING</kbd> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">PATTERN</span> <span class="then" aria-label="then">&rsaquo;</span> <span class="item">BOUNCE...</span></td></tr>
+        <tr data-k="bounce resample cut tail loop"><th scope="row">Choose CUT, TAIL or LOOP</th><td>turn <kbd>VALUE</kbd></td></tr>
+        <tr data-k="bounce resample target destination empty"><th scope="row">Choose the new pad</th><td>tap an empty <kbd>pad</kbd></td></tr>
+        <tr data-k="bounce resample start record go"><th scope="row">Start the bounce</th><td><kbd>RESAMPLE</kbd> or <kbd>VALUE</kbd></td></tr>
+        <tr data-k="bounce resample close cancel card"><th scope="row">Close the bounce card</th><td><kbd>EXIT</kbd></td></tr>
         <tr data-k="bounce resample stop cancel"><th scope="row">Stop a bounce</th><td><kbd>EXIT</kbd></td></tr>
         <tr data-k="bounce in place track back"><th scope="row">The track back after a bounce in place</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>PATTERN SELECT</kbd></td></tr>
       </table>
@@ -820,10 +827,12 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
       <h3>Instruments</h3>
       <table>
         <tr data-k="synth drum engine sound browser"><th scope="row">Load an instrument onto an empty pad</th><td>hold <kbd>SUB PAD</kbd><span class="plus">+</span>tap an empty <kbd>pad</kbd>, release <kbd>SUB PAD</kbd>, turn <kbd>VALUE</kbd>, press <kbd>VALUE</kbd></td></tr>
+        <tr data-k="listen audition hear try sound"><th scope="row">Preview an instrument</th><td>in the browser: hold <kbd>SUB PAD</kbd>; turn <kbd>VALUE</kbd> while holding it for the next</td></tr>
         <tr data-k="kit drum 808 909 606 list"><th scope="row">INSTRUMENTS / KITS in the browser</th><td><kbd>SHIFT</kbd><span class="plus">+</span>turn <kbd>VALUE</kbd></td></tr>
         <tr data-k="kit drum bank fill load"><th scope="row">Load a kit into a bank</th><td>in the browser: select a kit, press <kbd>VALUE</kbd>, press a <kbd>BANK</kbd> button, press <kbd>VALUE</kbd></td></tr>
         <tr data-k="edit sound synth parameters"><th scope="row">Instrument editor</th><td><kbd>START/END</kbd></td></tr>
         <tr data-k="replace swap change other instrument sound"><th scope="row">Replace the instrument</th><td>in the editor: <kbd>REMAIN</kbd>, turn <kbd>VALUE</kbd>, press <kbd>VALUE</kbd>, <span class="item">YES</span></td></tr>
+        <tr data-k="try swap compare listen audition"><th scope="row">Try other instruments on the track</th><td>in the editor: <kbd>REMAIN</kbd>, turn <kbd>VALUE</kbd>; <kbd>EXIT</kbd> returns to the original</td></tr>
         <tr data-k="delete remove unload clear empty pad"><th scope="row">Remove the instrument from its pad</th><td>outside DOOM OS: hold <kbd>DEL</kbd><span class="plus">+</span><kbd>pad</kbd>, press <kbd>VALUE</kbd></td></tr>
         <tr data-k="section parameters page"><th scope="row">Select a section</th><td>turn <kbd>VALUE</kbd></td></tr>
         <tr data-k="parameter knob"><th scope="row">Section parameters</th><td><kbd>CTRL 1</kbd> <kbd>CTRL 2</kbd> <kbd>CTRL 3</kbd> (hold <kbd>SHIFT</kbd> for finer steps)</td></tr>
@@ -891,7 +900,7 @@ footer.site .note { flex-basis: 100%; margin: 0; font-size: 13px; }
         <tr data-k="mute"><th scope="row">Mute / unmute</th><td><kbd>SHIFT</kbd><span class="plus">+</span>press <kbd>VALUE</kbd></td></tr>
         <tr data-k="mute unmute pad mute silence"><th scope="row">Mute / unmute a pad</th><td>tap the <kbd>pad</kbd></td></tr>
         <tr data-k="solo alone only isolate"><th scope="row">Solo on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>ROLL</kbd></td></tr>
-        <tr data-k="solo alone only isolate pad"><th scope="row">Solo a track on / off</th><td><kbd>SHIFT</kbd><span class="plus">+</span>its <kbd>pad</kbd></td></tr>
+        <tr data-k="solo alone only isolate pad"><th scope="row">Solo a track on / off</th><td><kbd>REMAIN</kbd><span class="plus">+</span>its <kbd>pad</kbd></td></tr>
         <tr data-k="meter display look view names track name long"><th scope="row">Display style: ARROWS, DITHER, with or without NAMES</th><td><kbd>SHIFT</kbd><span class="plus">+</span><kbd>RECORD SETTING</kbd></td></tr>
         <tr data-k="back close mixer"><th scope="row">Return to the grid</th><td><kbd>EXIT</kbd></td></tr>
       </table>
