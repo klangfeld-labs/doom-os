@@ -1,0 +1,11 @@
+# DOOM OS 0.7.2, build 359C: SHA-256 checksums.
+#
+# To check a file yourself:
+#   Windows:          certutil -hashfile SP404MKII_APP1.bin SHA256
+#   macOS and Linux:  shasum -a 256 SP404MKII_APP1.bin
+#
+# firmware  sha256 of the stock SP404MKII_APP1.bin  sha256 of the DOOM OS image  status
+5.52  4a3d67711e14dcc97d50249a4eee7dd6df0251a2f37757cbbe2556c233730d80  db017ffd2df46cb263536e82717ee03b544e2c198b67580f8e13ccf399ee29bd  run on a unit
+
+# file  sha256
+doomos-patcher.js  162ee554f89661e444f5f90587e1ecfe3a2a52d7ce15a4dd3e44d901e4232d6f

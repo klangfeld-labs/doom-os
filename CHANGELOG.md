@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.2, build 359C (2026-10-30)
+
+**Fixes**
+- **GATE now works on instruments**  
+- **The instrument browser can now be opened during playback**  
+- **Replacing an instrument now properly resets its values**  
+- **Deleted tracks could reappear under certain conditions**  
+
 ## 0.7.1, build E7F5 (2026-10-29)
 
 **Improvements**
