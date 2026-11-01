@@ -1,4 +1,4 @@
-# DOOM OS: a custom OS for the Roland SP-404MK2
+# DOOM OS: a custom firmware for the Roland SP-404MK2
 
 <p align="center">
   <img src="assets/doom-os-512.png" alt="DOOM OS">
@@ -9,7 +9,7 @@ sequencer, a mixer, instruments, an arpeggiator, parameter locking, effect autom
 
 Current version: 0.7.2 build 359C (2026-10-30)
 
-**[Quick installation: Use the web patcher to install DOOM OS](https://klangfeldlabs.com/doom-os/patcher)**
+**[Quick installation: Use the web patcher to install DOOM OS](https://klangfeldlabs.com/doom-os/)**
 
 ## Features
 
