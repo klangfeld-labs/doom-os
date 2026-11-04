@@ -7,14 +7,13 @@
 DOOM OS is a heavily modified version of the original 5.52 firmware. It adds a graphical pattern
 sequencer, a mixer, instruments, an arpeggiator, parameter locking, effect automation, custom shortcuts and much, much more.
 
-Current version: 0.7.2 build 359C (2026-10-30)
+Current version: 0.7.3 build 733D (2026-11-04)
 
 **[Quick installation: Use the web patcher to install DOOM OS](https://klangfeldlabs.com/doom-os/)**
 
 ## Features
 
 DOOM OS includes many more features and improvements than can be listed here. Check out the [full manual](https://klangfeldlabs.com/doom-os/manual/) for a complete overview.
-
 
 * Pattern sequencer with a graphical interface: see and edit your pattern as a grid while it plays
 * Piano roll

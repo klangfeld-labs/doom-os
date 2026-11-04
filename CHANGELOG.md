@@ -1,8 +1,27 @@
 # Changelog
 
+## 0.7.3, build 733D (2026-11-04)
+
+Notice: Reverting to earlier versions of DOOM OS will not preserve your instruments and EQ settings, even if you make a backup. Make sure to back up your projects using 0.7.3. Downgrading to an earlier version of DOOM OS is not supported.
+
+**Fixed**
+- **Project import, export and backup now properly preserves DOOM OS data**  
+  DOOM OS-specific data, including instruments, EQ settings and parameter locks, is now preserved when importing, exporting or backing up projects.
+- **Fixed an issue with pattern copy**  
+  This should fix the "Sequencer Rec Memory Full!" error. To fix an affected pattern, open it in DOOM OS, make a single edit, and then exit DOOM OS. The COPY function should then work normally.
+- **Deleted projects now appear empty in DOOM OS**  
+  Deleting the current project could leave its tracks and instruments visible in DOOM OS. This has been fixed.
+- **Fixed an issue with a test boot image remaining after reverting to stock firmware**  
+  Earlier versions accidentally included a test boot image that could remain on the startup screen in certain situations after reverting back to the stock firmware. This update removes the image and restores the original Roland startup screen.
+- **GATE now works with instruments and parameter locks**  
+- **Using the EXIT button in the Roland SP-404MKII app works again**  
+- **QUANTIZE keeps your chords**  
+  Quantizing, applying swing, or humanizing a track could cause chords to lose notes. All notes in a chord are now preserved.
+- **Various small issues**
+
 ## 0.7.2, build 359C (2026-10-30)
 
-**Fixes**
+**Fixed**
 - **GATE now works on instruments**  
 - **The instrument browser can now be opened during playback**  
 - **Replacing an instrument now properly resets its values**  
@@ -18,7 +37,7 @@
 - **Bounce in place to any empty pad**  
   Press RESAMPLE to open the bounce screen, which shows what will be bounced and how the pattern will be affected. Choose CUT, TAIL or LOOP, select an empty pad, then press RESAMPLE to start recording. Once finished, the new pad is shown on screen.
 
-**Fixes**
+**Fixed**
 - **Mixer solo now uses REMAIN + pad instead of SHIFT**  
   SHIFT + pad previously soloed a track but also triggered the pad's SHIFT functions, such as FIXED VELOCITY. Solo now uses REMAIN + pad, leaving SHIFT + pad to work as expected.
 - **Fixed button LED states**  
@@ -87,7 +106,7 @@
   Due to memory limitations DOOM OS can't display more than 16,384 notes in a single pattern. If you try to load a pattern that contains even more notes, a message will be shown. It will still load and play, but won't show all notes on the grid.
 - **The grid and the mixer now show up to 160 tracks instead of just 18** 
 
-**Fixes**
+**Fixed**
 - **Mixer levels, pan and bus are now retained after switching off**  
 - **Various undo/redo bugs**  
   Various undo/redo related bugs were fixed. Most of them were edge cases related to switching between projects. Undo/redo should be more solid now.
