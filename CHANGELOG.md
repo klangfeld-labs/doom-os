@@ -1,5 +1,46 @@
 # Changelog
 
+## 0.7.4, build 651C (2026-11-13)
+
+## Improvements
+
+- **Track parameters are now displayed when turning CTRL knobs**  
+- **Fine-adjust when holding shift when turning CTRL knobs now works more consistently**  
+- **Improved note length precision and display**  
+  Note lengths can now be adjusted in increments of 1/24 of a step, or 1/60 when holding SHIFT. Values are displayed with two decimal places again, as they did in earlier versions. The note length range now also uses a curve so that smaller, more precise adjustments can be made more easily
+- **CTRL knobs now respect the SP's Edit Knob Mode (catch/direct)**  
+- **Added FX automation deletion controls**  
+  Use DEL + an FX button to clear automation for a specific effect, or DEL + MARK to clear automation for all effects.
+- **Improved parameter display and interface consistency**  
+  Updated note length and nudge displays (for example, nudge is now abbreviated as "NDG" instead of "MIC"), simplified help screens and standardized confirmation dialogs.
+- **Added a slight "dead zone" to the CTRL knobs to prevent accidental track parameter changes**  
+- **START/END now lights up when holding SHIFT**  
+
+## Fixed
+
+- **Fixed a rare freeze that could occur after extended use**  
+- **Fixed stereo output when bouncing mono samples with effects**  
+  Bouncing a mono sample with stereo effects or panning now correctly produces stereo output.
+- **Fixed instruments becoming silent after certain pad operations**  
+- **Fixed COPY, EXCHANGE and DELETE for instrument pads**  
+- **Fixed empty tracks not following pattern operations**  
+- **Fixed PRINT ARP on empty patterns**  
+  Arpeggiator notes can now be printed directly into an empty pattern.
+- **Fixed PASTE truncating tracks on empty patterns**  
+  Pasting into an empty pattern now preserves the original track length.
+- **Fixed COPY on empty tracks clearing the clipboard**  
+  Copying an empty track no longer overwrites previously copied data. Improved error messages for other operations involving empty pads or tracks.
+- **Fixed piano roll input on empty patterns**  
+  Notes can now be entered through the piano roll without first creating a note in the pattern.
+- **Fixed unwanted track creation on empty patterns**  
+  Pattern operations and length adjustments no longer create an unintended track on A1.
+- **Fixed track selection after undo**  
+  Undoing CLEAR or DELETE now correctly restores the selected track.
+- **Fixed cleared patterns reappearing under certain circumstances after leaving DOOM OS**  
+  Clearing a pattern during playback now correctly persists when leaving DOOM OS.
+- **Fixed BOUNCE on pads without samples**  
+  BOUNCE now displays EMPTY PAD instead of replacing the track with silence.
+- **Various small fixes**
 ## 0.7.3, build 733D (2026-11-04)
 
 Notice: Reverting to earlier versions of DOOM OS will not preserve your instruments and EQ settings, even if you make a backup. Make sure to back up your projects using 0.7.3. Downgrading to an earlier version of DOOM OS is not supported.

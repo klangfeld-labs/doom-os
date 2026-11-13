@@ -5,11 +5,11 @@
 </p>
 
 DOOM OS is a heavily modified version of the original 5.52 firmware. It adds a graphical pattern
-sequencer, a mixer, instruments, an arpeggiator, parameter locking, effect automation, custom shortcuts and much, much more.
+sequencer, a mixer, instruments, an arpeggiator, parameter locking, effect automation, custom shortcuts and much, much more!
 
-Current version: 0.7.3 build 733D (2026-11-04)
+Current version: 0.7.4 build 651C (2026-11-13)
 
-**[Quick installation: Use the web patcher to install DOOM OS](https://klangfeldlabs.com/doom-os/)**
+### **[Quick installation: Use the web patcher to install DOOM OS](https://klangfeldlabs.com/doom-os/)** ###
 
 ## Features
 
@@ -37,16 +37,15 @@ DOOM OS includes many more features and improvements than can be listed here. Ch
 * Six boot animations
 * And much, much more!
 
-## Improvements
+And, most importantly:
 
-* Safer pattern saving: patterns are first written to a new file, and the original is only removed once the new file has been written successfully
-* Everything from the original firmware remains available. DOOM OS doesn't remove or replace any stock functionality. Simply exit DOOM OS to return to the original interface.
+**Everything from the original firmware remains available!** DOOM OS doesn't remove or replace any stock functionality. Simply exit DOOM OS to return to the original interface.
 
 ## How to install
 
 The easiest way to install DOOM OS is by using the web patcher:
 
-https://klangfeldlabs.com/doom-os/patcher
+https://klangfeldlabs.com/doom-os/
 
 You can also download this repository as a ZIP file (under the Code button), unzip it and open index.html in your browser. Just follow the instructions on the page.
 

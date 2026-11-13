@@ -1,0 +1,8 @@
+Barlow: Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)
+IBM Plex Mono: Copyright 2017 IBM Corp.
+
+Both are licensed under the SIL Open Font License, Version 1.1:
+https://openfontlicense.org/open-font-license-official-text/
+
+The latin subsets here are the @fontsource builds. make_patch.py embeds them in the patcher
+page, so the page draws in the site's own type without asking a font server for anything.
